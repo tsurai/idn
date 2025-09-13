@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block func %}
+await idn.stats();
+{% endblock func %}
+{% block content %}
+
+<nav>
+  <section class="card status">
+    <h4>Learn</h4>
+    <p>
+      <span id="num_vocabs" class="num"></span> new words left to learn today
+    </p>
+    <p>
+      No new words left to learn
+    </p>
+
+    <a href="/idn/learn"><button></button></a>
+  </section>
+  <section class="card status">
+    <h4>Review</h4>
+    <p>
+      <span id="num_reviews" class="num"></span> reviews are waiting
+    </p>
+    <p>
+      <span>Next reviews <time id="review_time"></time></span>
+      <span>Learn a new words to start reviews</span>
+    </p>
+    <a href="/idn/review/"><button></button></a>
+  </section>
+</nav>
+<section>
+  <h3>About</h3>
+  <p>I'm a big fan of the <em>protege effect</em> or <em>learning by teaching</em>. Trying or even just pretending to teach others is a test of your own understanding and reveals knowledge gaps. This website is the still evolving result of my <em>Indonesian</em> studies. While I'm doing my best to research and verify the information presented here, I am neither a native, nor do I have the cultural background to pick up on all nuances. Corrections are always welcomed and very appreciated.<br>
+  Feel free to use the email adress listed on my <a href="https://github.com/tsurai/">github profile</a> or <a href="https://github.com/tsurai/idn/issues">open an issue</a> directly.<br>
+  There are no accounts, no data being tracked or sold, everything is local to your browser.</p>
+</section>
+<section>
+  <h3>Lessons</h3>
+  {% set section = get_section(path="lessons/_index.md") %}
+  {% for page in section.pages %}
+    <article>
+      <header>
+        <h4>{{ page.slug | split(pat="-") | nth(n=0) }}&nbsp;<a class="fancy" href="{{ page.permalink }}">{{ page.title }}</a></h4>
+      </header>
+      <summary>
+        {{ page.extra.summary | markdown | safe }}
+      </summary>
+    </article>
+  {% endfor %}
+</section>
+{% endblock content %}

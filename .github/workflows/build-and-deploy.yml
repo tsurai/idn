@@ -1,0 +1,30 @@
+on: push
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN }}
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          target: wasm32-unknown-unknown
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - name: Run wasm-pack
+        run: |
+          cd ./wasm
+          wasm-pack build --release --no-typescript --target web
+          cd ..
+          mkdir -p ./static/pkg
+          cp  ./wasm/pkg/idn_bg.wasm ./static/pkg/
+          cp  ./wasm/pkg/idn.js ./static/pkg/
+      - name: build_and_deploy
+        uses: shalzz/zola-deploy-action@master
+        env:
+          # Target branch
+          PAGES_BRANCH: gh-pages
+          TOKEN: ${{ secrets.TOKEN }}

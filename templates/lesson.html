@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%- block func -%}
+await idn.stats();
+{%- endblock func %}
+{%- block content -%}
+<article>
+  <header>
+    <h3 class="fancy">{{ page.title }}</h3>
+    <time datetime="{{ page.updated }}">Last updated on {{ page.updated }}</time>
+  </header>
+  <section>
+    {{- page.content | safe -}}
+  </section>
+  <footer>
+    <nav>
+      {%- if page.extra.prev -%}
+        {%- set p = get_page(path="lessons/" ~ page.extra.prev) -%}
+        <fieldset>
+          <label for="prev">Previous chapter:</label>
+          <a id="prev" class="fancy" href="{{p.permalink}}">« {{p.title}}</a>
+        </fieldset>
+      {%- endif -%}
+      {%- if page.extra.next -%}
+        {%- set p = get_page(path="lessons/" ~ page.extra.next) %}
+        <fieldset>
+          <label for="next">Next chapter:</label>
+          <a id="next" class="fancy" href="{{p.permalink}}">{{p.title}} »</a>
+        </fieldset>
+      {%- endif -%}
+    </nav>
+  </footer>
+</article>
+{% endblock content %}

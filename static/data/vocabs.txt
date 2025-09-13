@@ -1,0 +1,48 @@
+1,1,saya,I,pronoun,formal,Saya minum air,I drink water,Kucing saya hitam,My cat is black
+2,1,suka,to like,verb,,Saya suka apel,I like apples
+3,1,makan,to eat,verb root,,
+4,1,minum,to drink,verb root,,Saya minum air,I'm drinking water
+5,1,kucing,cat,noun,,Kucing saya hitam,My cat is black
+6,1,apel,apple,noun,,
+7,1,kucing-kucing,cats,noun,plural by repetition,
+8,1,air,water,noun,,Saya minum air,I'm drinking water
+9,1,bus,bus,noun,pronounced as bis,
+10,1,nasi,rice,noun,,Saya makan nasi goreng,I'm eating fried rice
+11,4,punya,have,non-verb root,often used as a verb despite being a non-verb root,Saya punya kucing,I have a cat
+12,1,dari,from / of,preposition,,Saya dari Kanada,I am from Kanada,Kamu dari mana?,Where are you from?
+13,1,belajar,to learn,verb,,Saya belajar Indonesia,I'm learning Indonesian
+14,1,sedang,at the moment / in the process of,adverb,formal,Saya sedang makan Indomie,I'm eating Indomie
+15,1,lagi,at the moment / in the process of / again,adverb,casual,Aku lagi makan Indomie,I'm eating Indomie,Aku makan Indomie lagi,I'm eating Indomie again
+16,1,nonton,to watch,non-verb root,,Aku lagi nonton Youtube,I'm watching Youtube
+17,1,tahu,to known,verb,,Kamu tahu Michi?,Do you know Michi?
+18,1,hari,day,noun,,Hari ini hari api?,What day of the week is today?
+19,1,rumah,home / house,noun,,Rumah kamu dimana?,Where is your house?
+20,1,tahun,year,noun,,Usia saya 20 tahun,I'm 20 years old
+21,1,sekolah,school,noun,,Aku masih sekolah,I'm still going to school
+22,1,datang,to come,verb,,Kenapa kamu datang?,Why did you come?
+23,1,pikir,think,non-verb root,formal,Saya pikir ini bagus,I think this is good,Aku sedang berpikir,I'm thinking,Saya memikirkan masalah ini,I'm thinking about this problem
+24,3,halo,hello,interfection,polite / neutral,Helo senang bertumu dengan anda,Hello nice to meet you
+25,4,selamat,safe / well / congratulation,adjective / noun,,Selamat pagi,Good morning
+26,3,pagi,morning,noun,,Selamat pagi,Good morning
+27,3,siang,noon,noun,,Selamat siang,Good noon / Good day
+28,3,sore,afternoon,noun,,Selamat sore,Good afternoon
+29,3,malam,night,noun,greeting & farewell,Selamat malam,Good night
+30,3,tinggal,to stay,verb root,,Selamat tinggal,Goodbye (said by a person leaving)
+31,3,jalan,to walk / to go,verb root,,Selamat jalan,Safe trip / Goodbye
+32,3,hai,hi / hey,interjection,,Hai apa kabar?,Hey how are you?
+33,3,woy,hey! / yo!,interjection,very casual slang often an exclamation,Woy sini deh!,Hey come here!
+34,3,Udah makan belum,Have you eaten yet?,phrase,common greeting similar to How are you? (not literal about food),
+35,3,Met sore,Good afternoon,phrase,abbreviation of selamat sore,
+36,2,aku,I,pronoun,casual,Aku suka kucing,I like cats,Nama aku Michi,My name is Michi
+37,1,nama,name,noun,,Nama aku Michi,My name is Michi
+38,2,kami,we,pronoun,exclusive / doesn't include the person talked to,Kami akan tiba besok,We will arrive tomorrow
+39,2,kita,we,pronoun,Inclusive / including the person talked to,Kita teman kan?,We are friends right?
+40,1,teman,friend,noun,,Kita teman kan?,We are friends right?
+41,2,anda,you,pronoun,formal,Anda tahu Michi?,Do you know Michi?
+42,2,kamu,you,pronoun,casual,Kamu tahu Michi?,Do you know Michi?
+43,2,kalian,you all,pronoun,plural,Kalian sedang apa?,What are you all doing?
+44,2,ia,he / she,pronoun,formal gender-neutral,Ia suka apel,He / She likes apples
+45,2,dia,he / she,pronoun,casual gender-neutral,Dia suka apel,He / She likes apples
+46,2,beliau,he / she,pronoun,Very formal gender-neutral,
+47,2,mereka,they,pronoun,plural gender-neutral,Mereka ada di sini
+48,2,noun + pronoun,My / Your / Her / His / Their + noun,possessive construct,,Nama aku,My name,Kucing dia,Her / His cat

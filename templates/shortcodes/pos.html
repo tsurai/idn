@@ -1,0 +1,6 @@
+{% set phrase = data | first %}
+{% if phrase | iteratable %}
+  {{pos(data=phrase)}}<sup>{{data | second}}</sup>
+{% else %}
+  {{phrase}}<sup>{{data | second}}</sup>
+{% endif %}

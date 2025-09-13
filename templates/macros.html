@@ -1,0 +1,19 @@
+{%- macro pos(data) -%}
+  {%- if data | first | lower -%}
+    <span class="pos">{{ data | first}}<sub>{{data | last}}</sub></span>
+  {%- elif data | last | lower -%}
+    {%- if data | length == 2 -%}
+<span class="pos">
+{{- data | first | first -}}
+<sub>{{data | first | nth(n=1)}}</sub><sup>{{data | last}}</sup></span>
+    {%- else -%}
+<span class="pos">
+{{- self::pos(data=data | slice(end=data | length - 1)) -}}
+<sup>{{data | last}}</sup></span>
+    {%- endif -%}
+  {%- else -%}
+    {%- for d in data -%}
+      {{- self::pos(data=d) -}}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endmacro pos -%}

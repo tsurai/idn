@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block func %}
+await idn.learn();
+{% endblock func %}
+{% block content %}
+<section class="vocab">
+  <div id="done">
+    <h3>No more vocabs to learn</h3>
+    <br>
+    <a href="/"><button class="purple">« back</button></a>
+  </div>
+  <div id="front">
+    <input type="hidden" id="vocab_id" />
+    <dt><h3><dfn id="vocab" lang="id"></dfn></h3></dt>
+    <dd lang="en">
+      <div id="pos"></div>
+      <div id="meaning"></div>
+      <span id="detail"></span>
+      <hr>
+      <p id="sentences"></p>
+    </dd>
+  </div>
+  <button class="purple" id="next">» next</button>
+</section>
+{% endblock content %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn{% if page %} - {{ page.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        await init();
+        try {
+          let idn = await Idn.new();
+          {%- block func %}{% endblock func -%}
+        }
+        catch(e) {
+          console.log(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    {%- if page %}
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    {%- endif %}
+    <main>
+      {%- block content %}{% endblock content -%}
+    </main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

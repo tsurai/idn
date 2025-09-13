@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <header>
+    <h3>{{ section.title }}</h3>
+  </header>
+  <section>
+    {% for lesson in section.pages %}
+      <li><a href="{{ lesson.permalink | safe }}">{{ lesson.title }}</a></li>
+    {% endfor %}
+  </section>
+</article>
+{% endblock content %}

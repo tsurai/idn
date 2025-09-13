@@ -1,0 +1,22 @@
+{%- import "macros.html" as macros -%}
+<div>
+  <dt>
+    <dfn lang="id">{{id}}</dfn>
+{%- if pos -%}
+  {%- if verbose -%}
+      <details>
+        <summary>{{pos}}</summary>
+        {{- macros::pos(data=verbose) -}}
+      </details>
+  {%- else -%}
+      <em>{{pos}}</em>
+  {%- endif %}
+{%- endif -%}
+  </dt>
+  <dd lang="en">
+    <b>{{en}}</b>
+  {%- if details %}
+    <em>({{details}})</em>
+  {%- endif %}
+  </dd>
+</div>

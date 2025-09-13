@@ -1,0 +1,27 @@
+{%- set n = get_random(end=1000000000) -%}
+<div class="quiz card">
+  <div>
+    {{en}}
+  </div>
+  <div>
+  {%- for word in id | split(pat=" ") -%}
+    {%- if word == "_" -%}
+      {% for option in options %}
+        {%- set correct = option in answers -%}
+        <input id="{{option}}-{{n}}" name="quiz-{{n}}" type="radio" autocomplete="off"/>
+        <span {% if correct %}class="correct"{% endif %}>{{option}}</span>
+      {%- endfor -%}
+      <span class="blank"></span>
+    {%- else %}
+      {{word}}
+    {%- endif -%}
+  {%- endfor -%}
+  </div>
+  <div>{% if note %}{{note}}{% endif %}</div>
+  <div>
+  {%- for option in options -%}
+    {%- set correct = option in answers -%}
+    <label class="button purple {% if correct %}correct{% endif %}" for="{{option}}-{{n}}">{{option}}</label>
+  {%- endfor -%}
+  </div>
+</div>
