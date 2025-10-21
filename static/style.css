@@ -6,15 +6,16 @@
     --white-off: oklch(77.04% 0.002 197.12);
     --black: oklch(25.11% 0.006 258.36);
     --black-off: oklch(43.87% 0.005 271.3);
-    --fg: light-dark(var(--black), var(--white));
-    --fg-off: light-dark(var(--black-off), var(--white-off));
-    --bg: light-dark(var(--white), var(--black));
-    --bg-off: light-dark(var(--white-off), var(--black-off));
-    --neutral: light-dark(oklch(93% 0.003 264), oklch(30% 0.003 264));
-    --purple: light-dark(oklch(43% 0.1807 298.49), oklch(65% 0.1807 298.49));
-    --pink: light-dark(oklch(45% 0.1807 331.69), oklch(65% 0.1807 331.69));
-    --green: light-dark(oklch(42.77% 0.1807 149.29), oklch(65% 0.1807 149.29));
-    --red: light-dark(oklch(42.77% 0.1807 27.24), oklch(65% 0.1807 27.24));
+    --neutral-light: oklch(93% 0.003 264);
+    --neutral-dark: oklch(30% 0.003 264);
+    --purple-light: oklch(43% 0.1807 298.49);
+    --purple-dark: oklch(65% 0.1807 298.49);
+    --pink-light: oklch(45% 0.1807 331.69);
+    --pink-dark: oklch(65% 0.1807 331.69);
+    --green-light: oklch(42.77% 0.1807 149.29);
+    --green-dark: oklch(65% 0.1807 149.29);
+    --red-light: oklch(42.77% 0.1807 27.24);
+    --red-dark: oklch(65% 0.1807 27.24);
     --shadow:
         color-mix(in oklch, var(--purple) 30%, transparent 70%) 5px 5px,
         color-mix(in oklch, var(--purple) 20%, transparent 80%) 10px 10px,
@@ -26,6 +27,59 @@
     --fancy: linear-gradient(45deg, var(--purple), 50%, var(--pink));
     --font: Helvetica, Arial, sans-serif;
     color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --fg: var(--black);
+        --bg: var(--white);
+        --fg-off: var(--black-off);
+        --bg-off: var(--white-off);
+        --neutral: var(--neutral-light);
+        --purple: var(--purple-light);
+        --pink: var(--pink-light);
+        --green: var(--green-light);
+        --red: var(--red-light);
+    }
+
+    :root:has(#theme_toggle:checked) {
+        --fg: var(--white);
+        --bg: var(--black);
+        --fg-off: var(--white-off);
+        --bg-off: var(--black-off);
+        --neutral: var(--neutral-dark);
+        --purple: var(--purple-dark);
+        --pink: var(--pink-dark);
+        --green: var(--green-dark);
+        --red: var(--red-dark);
+    }
+}
+
+/* dark mode specific */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fg: var(--white);
+        --bg: var(--black);
+        --fg-off: var(--white-off);
+        --bg-off: var(--black-off);
+        --neutral: var(--neutral-dark);
+        --purple: var(--purple-dark);
+        --pink: var(--pink-dark);
+        --green: var(--green-dark);
+        --red: var(--red-dark);
+    }
+
+    :root:has(#theme_toggle:checked) {
+        --fg: var(--black);
+        --bg: var(--white);
+        --fg-off: var(--black-off);
+        --bg-off: var(--white-off);
+        --neutral: var(--neutral-light);
+        --purple: var(--purple-light);
+        --pink: var(--pink-light);
+        --green: var(--green-light);
+        --red: var(--red-light);
+    }
 }
 
 * {
@@ -108,6 +162,10 @@ h6 {
     background-clip: text !important;
     color: rgba(0, 0, 0, 0);
     max-width: max-content;
+}
+
+input[type=checkbox] {
+    display: none;
 }
 
 hr {
@@ -249,6 +307,17 @@ button {
     visibility: hidden;
 }
 
+label[for=theme_toggle] {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    border-top: 20px solid color-mix(in oklch, var(--fg-off) 50%, transparent 50%);
+    border-left: 20px solid transparent;
+}
+
 .card {
     padding: 15px 25px;
     border-radius: 10px;
@@ -386,11 +455,11 @@ footer nav fieldset {
     font-weight: bold;
 }
 
-fieldset label {
+fieldset span {
     display: block;
 }
 
-footer nav fieldset:has(label[for=next]) {
+footer nav fieldset:not(:first-of-type) {
     text-align: right;
 }
 

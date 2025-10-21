@@ -10,6 +10,11 @@
       import init, { Idn } from "/idn/pkg/idn.js";
 
       async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
         await init();
         try {
           let idn = await Idn.new();
@@ -23,6 +28,8 @@
     </script>
   </head>
   <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
     {%- if page %}
       <header>
         <nav>

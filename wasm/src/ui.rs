@@ -1,7 +1,7 @@
 use chrono::{DateTime, Datelike, Utc};
 use wasm_bindgen::{JsCast, prelude::*};
 use wasm_bindgen_futures::{spawn_local};
-use web_sys::{window, HtmlButtonElement, HtmlDivElement, HtmlElement, HtmlInputElement, HtmlTimeElement};
+use web_sys::{HtmlButtonElement, HtmlElement, HtmlInputElement, HtmlTimeElement};
 use rs_fsrs::FSRS;
 
 use std::rc::Rc;

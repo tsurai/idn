@@ -16,14 +16,14 @@ await idn.stats();
       {%- if page.extra.prev -%}
         {%- set p = get_page(path="lessons/" ~ page.extra.prev) -%}
         <fieldset>
-          <label for="prev">Previous chapter:</label>
+          <span>Previous chapter:</span>
           <a id="prev" class="fancy" href="{{p.permalink}}">« {{p.title}}</a>
         </fieldset>
       {%- endif -%}
       {%- if page.extra.next -%}
         {%- set p = get_page(path="lessons/" ~ page.extra.next) %}
         <fieldset>
-          <label for="next">Next chapter:</label>
+          <span>Next chapter:</span>
           <a id="next" class="fancy" href="{{p.permalink}}">{{p.title}} »</a>
         </fieldset>
       {%- endif -%}
