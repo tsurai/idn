@@ -30,7 +30,7 @@ One phrase that might trip up _English_ speaker is {{id(id="selamat malam", en="
 When two people or parties separate, with one of them leaving and the other staying, for example. In this case the _staying_ person would say {{id(id="selamat jalan", en="goodbye / safe trip")}} which means **goodbye** / **safe trip**. Likewise the person who _leaves_ would say {{id(id="selamat tinggal", en="goodbye")}} which literally means to **stay safe**, but is more akin to a generic **goodbye**.
 
 ##### Examples
-<dl class="card">
+<dl class="card examples">
 {{ vocab(id="Selamat sore", en="Good afternoon", pos="adjective + noun (phrase)") }}
 {{ vocab(id="Selamat malam", en="Good night", pos="adjective + noun (phrase)", details="both a greeting and farewell") }}
 {{ vocab(id="halo, apa kabar?", en="Hello, how are you?", pos="interjecton + predicate + subject") }}
@@ -40,7 +40,7 @@ When two people or parties separate, with one of them leaving and the other stay
 
 Casual speech and especially slang is ever shifting and evolving, not to mention the hundreds of local languages spread across _Indonesia_. Again, be careful with overly casual speech and slang as a language learner. That being said, it can be difficult to follow _Indonesian_ used by younger people without it, especially online.
 
-##### Examples
+##### Vocabulary
 <dl class="card grid1">
 {{ vocab(id="hai", en="hi / hey", pos="interjection", details="casual but neutral") }}
 {{ vocab(id="woy", en="hey! / yo!", pos="interjection", details="very casual slang") }}

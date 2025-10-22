@@ -432,7 +432,7 @@ dd {
     margin-left: 0px;
 }
 
-dl em {
+dl :is(span,em) {
     color: var(--fg-off);
 }
 
@@ -455,12 +455,12 @@ footer nav fieldset {
     font-weight: bold;
 }
 
-fieldset span {
-    display: block;
+footer nav fieldset:is(:nth-last-child(1)) {
+    text-align: right;
 }
 
-footer nav fieldset:not(:first-of-type) {
-    text-align: right;
+fieldset span {
+    display: block;
 }
 
 div#done h3 {
@@ -625,7 +625,15 @@ span.blank::before {
     color: var(--fg);
 }
 
-dfn ~ em::before {
+dl.examples dfn ~ span {
+    display: block;
+}
+
+dl.not(.examples) dnf ~ span {
+    font-style: italix;
+}
+
+dl:not(.examples) dfn ~ span::before {
     content: " - ";
 }
 
@@ -644,11 +652,11 @@ dfn ~ em::before {
 }
 
 @media only screen and (max-width: 480px) {
-    dfn ~ em::before {
+    dfn ~ span::before {
         display: none;
     }
 
-    dfn ~ em {
+    dfn ~ span {
         display: block;
     }
 

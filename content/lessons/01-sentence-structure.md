@@ -28,7 +28,7 @@ While this is the most commonly used form, _Indonesian_ offers a lot of flexibil
 </dl>
 
 <h5>Examples</h5>
-<dl class="card">
+<dl class="card examples">
 {{ vocab(id="Saya suka kucing", en="I like cats", pos="subject + verb + object") }}
 {{ vocab(id="Saya makan apel", en="I'm eating an apple", pos="subject + verb + object") }}
 {{ vocab(id="Saya menulis surat", en="I'm writing a letter", pos="subject + verb + object") }}

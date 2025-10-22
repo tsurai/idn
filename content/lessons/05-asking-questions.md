@@ -17,9 +17,9 @@ After the rather theory-heavy previous chapter, it's time to return the focus to
 <dl class="card">
 {{ vocab(id="Siapa nama anda?", en="What is your name?", pos="predicate + noun + subject", details="formal", verbose=[
   [["Siapa","intp"], "P"], [["nama", "n"], ["anda", "p"], "S"] ]) }}
-{{ vocab(id="Itu siapa?", en="Who is that?", pos="subject + predicate", verbose=[
+{{ vocab(id="Itu siapa?", en="Who is that?", pos="demonstrative pronoun + interrogative pronoun", verbose=[
   [["Itu", "demp"], "S"], [["siapa", "intp"], "P"]]) }}
-{{ vocab(id="Siapa dia buat kamu?" en="What is he/she to you", pos="predicate + subject + verb + object", verbose=[
+{{ vocab(id="Siapa dia buat kamu?" en="What is he/she to you", pos="interogative pronoun + personal pronoun + verb + personal pronoun", verbose=[
   [["Siapa", "intp"], "Pred"], [["dia", "p"], "S"], ["buat", "v"], [["kamu", "p"], "O"]] )}}
 </dl>
 
@@ -55,7 +55,7 @@ Finally, the third form _Apa + noun phrase?_, surprisingly, expresses a _what-qu
 ##### Examples
 <dl class="card">
 {{ vocab(id="Apa kabar?", en="How are you?", details="literally What's (the) news", pos="expresion") }}
-{{ vocab(id="Apa hobi kamu?", en="What are your hobbies?", pos="int. pronoun + noun + pronoun", verbose=[[["Apa", "intp"], "Pred"], [["hobi", "n"], ["kamu", "pronoun"], "S"]]) }}
+{{ vocab(id="Apa hobi kamu?", en="What are your hobbies?", pos="interrogative pronoun + noun + personal pronoun", verbose=[[["Apa", "intp"], "Pred"], [["hobi", "n"], ["kamu", "pronoun"], "S"]]) }}
 {{ vocab(id="Apa kita bisa pergi?", en="Can we go?") }}
 {{ vocab(id="Apa arti dari kata ini dalam bahasa Inggris?", en="What does this word mean in English?", pos="int. pronoun + noun + preposition + noun + dem. pronoun + preposition + noun phrase", verbose=[
   [["Apa","intp"], "Pred"], [["arti", "n"], ["dari", "prep"], ["kata", "n"], ["ini", "demp"], ["dalam", "prep"], ["bahasa", "n"], ["Inggris", "n"], "S"] ]) }}

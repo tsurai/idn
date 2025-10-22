@@ -27,12 +27,16 @@ Instead of _tense_ to describe the point in time of an action _Indonesian_ utili
 To illustrate the difference, let's have a look at {{id(id="sudah", en="already / has / have")}}, the aspect for a _completed_ action. The English phrases **I ate lunch** _(simple past)_ and **I have eaten lunch** _(present perfect)_ are distinct tenses but use the same _aspect_ and thus, would both be expressed with {{id(id="sudah", en="already / has / have")}}. As always there are nuances and in _Indonesian_ context is king. In {{id(id="Aku makan nasi kemarin", en="I ate rice yesterday")}} which translates to **I ate rice yesterday**, {{id(id="sudah", en="already / have / has")}} is not needed because it is implied by {{id(id="kemarin",en="yesterday")}} / **yesterday**.
 
 ##### Examples
-<dl class="card">
-{{ vocab(id="Aku sudah makan nasi", en="I ate rice", pos="subject + particle + verb + object") }}
-{{ vocab(id="Aku akan makan nasi", en="I will eat rice", pos="subject + particle + verb + object") }}
-{{ vocab(id="Besok aku akan sudah makan nasi", en="I will have eaten rice tomorrow", pos="noun + subject + particle + particle + verb + object") }}
-{{ vocab(id="Aku belum belajar", en="I haven't studied yet", pos="subject + particle + verb") }}
-{{ vocab(id="Aku masih belajar indonesia", en="I'm still learning Indonesian", pos="subject + particle + verb + object") }}
+<dl class="card examples">
+{{ vocab(id="Aku sudah makan nasi", en="I ate rice", pos="personal pronoun + particle + verb + noun", verbose=[
+  [["Aku", "perp"], "S"], ["sudah", "par"], ["makan", "v"], [["nasi", "n"], "O"]
+]) }}
+{{ vocab(id="Aku akan makan nasi", en="I will eat rice", pos="personal pronoun + particle + verb + noun", verbose=[
+  [["Aku", "perp"], "S"], ["akan", "par"], ["makan", "v"], [["nasi", "n"], "O"]
+] }}
+{{ vocab(id="Besok aku akan sudah makan nasi", en="I will have eaten rice tomorrow", pos="noun + personal pronoun + particle + particle + verb + noun") }}
+{{ vocab(id="Aku belum belajar", en="I haven't studied yet", pos="personal pronoun + particle + verb") }}
+{{ vocab(id="Aku masih belajar indonesia", en="I'm still learning Indonesian", pos="personal pronoun + particle + verb + object") }}
 </dl>
 
 ##### Quiz
@@ -82,10 +86,16 @@ You might think that **me-** merely adds a **to ___** to a given root word but t
 </table>
 
 ##### Examples
-<dl class="card">
-{{ vocab(id="Dia menulis surat", en="She writes a letter", pos="subject + verb (me- + tulis) + object") }}
-{{ vocab(id="Aku membaca buku", en="I read a book", pos="Subject + verb (me- + baca) + object") }}
-{{ vocab(id="Saya makan apel", en="I eat an apple", pos="Subject + verb + object", details="makan is Verb Root word and doesn't need me-") }}
+<dl class="card examples">
+{{ vocab(id="Dia menulis surat", en="She writes a letter", pos="personal pronoun + verb (me- + tulis) + noun", verbose=[
+  [["Dia", "perp"], "S"], ["menulis", "v"], [["surat", "n"], "S"]
+]) }}
+{{ vocab(id="Aku membaca buku", en="I read a book", pos="personal pronoun + verb (me- + baca) + noun", verbose=[
+    [["Aku", "perp"], "S"], ["membaca", "v"], [["buku", "n"], "S"]
+]) }}
+{{ vocab(id="Saya makan apel", en="I eat an apple", pos="personal pronoun + verb + noun", details="makan is Verb Root word and doesn't need me-", verbose =[
+    [["Saya", "perp"], "S"], ["makan", "v"], [["apel", "n"], "S"]
+]) }}
 </dl>
 
 ##### Patient focus
@@ -120,14 +130,20 @@ This type of _passive_ is often used in casual conversations, but requires the _
 1. _Undergoer (Subject) + verb-ku,-mu,-nya_
 
 ##### Examples
-<dl class="card">
-{{ vocab(id="Tikus dikejar kucing", en="The rat is chased by a cat", pos="subject + verb + object") }}
-{{ vocab(id="Dia aku pukul", en="He/She was hit by me", pos="subject + object + verb") }}
-{{ vocab(id="Dia pukulku", en="He/She was hit by me", pos="subject + verb-ku") }}
+<dl class="card examples">
+{{ vocab(id="Tikus dikejar kucing", en="The rat is chased by a cat", pos="noun + verb + noun", verbose=[
+  [["Tikus", "n"], "S"], ["dikejar", "pasv"], [["kucing", "n"], "O"]
+]) }}
+{{ vocab(id="Dia aku pukul", en="He/She was hit by me", pos="personal pronoun + personal pronoun + verb", verbose=[
+  [["Dia", "perp"], "S"], [["aku", "perp"], "O"], ["pukul", "v"]
+]) }}
+{{ vocab(id="Dia pukulku", en="He/She was hit by me", pos="personal pronoun + verb + possessive pronoun suffix", verbose=[
+  [["Dia", "perp"], "S"], [["pukul", "verb"], ["-ku", "posp"], "P"]
+]) }}
 {{ vocab(
   id="Buku yang aku pinjam udah aku balikin kemarin",
   en="The book I borrowed was already returned by me yesterday",
-  pos="subject noun phrase + adverb + actor + verb + adverb",
+  pos="noun + conjunction + personal pronoun + verb + + adverb + personal pronoun + verb + adverb",
   verbose=[
     [["Buku", "n"], ["yang", "conj"], ["aku", "p"], ["pinjam", "v"], "S"],
     ["uda", "adv"],
