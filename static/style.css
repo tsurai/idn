@@ -455,7 +455,7 @@ footer nav fieldset {
     font-weight: bold;
 }
 
-footer nav fieldset:is(:nth-last-child(1)) {
+footer nav fieldset:has(a#next) {
     text-align: right;
 }
 

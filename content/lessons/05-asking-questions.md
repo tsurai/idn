@@ -2,7 +2,7 @@
 title = "Asking Questions"
 slug = "05-asking-questions"
 date = "2025-10-09"
-updated = "2025-10-09"
+updated = "2025-10-24"
 [extra]
 prev = "04-verb-modifications.md"
 summary = "The groundwork of communication is the ability to ask questions. For this we have to learn the _Indonesian_ counterparts of the called _wh_ queston words: what, who, why and so on."
@@ -15,12 +15,12 @@ After the rather theory-heavy previous chapter, it's time to return the focus to
 
 ##### Examples
 <dl class="card">
-{{ vocab(id="Siapa nama anda?", en="What is your name?", pos="predicate + noun + subject", details="formal", verbose=[
-  [["Siapa","intp"], "P"], [["nama", "n"], ["anda", "p"], "S"] ]) }}
+{{ vocab(id="Siapa nama anda?", en="What is your name?", pos="interrogative pronoun + noun + personal pronoun", details="formal", verbose=[
+  [["Siapa","intp"], "P"], [["nama", "n"], ["anda", "perp"], "S"] ]) }}
 {{ vocab(id="Itu siapa?", en="Who is that?", pos="demonstrative pronoun + interrogative pronoun", verbose=[
   [["Itu", "demp"], "S"], [["siapa", "intp"], "P"]]) }}
-{{ vocab(id="Siapa dia buat kamu?" en="What is he/she to you", pos="interogative pronoun + personal pronoun + verb + personal pronoun", verbose=[
-  [["Siapa", "intp"], "Pred"], [["dia", "p"], "S"], ["buat", "v"], [["kamu", "p"], "O"]] )}}
+{{ vocab(id="Siapa dia buat kamu?" en="What is she / he to you", pos="interogative pronoun + personal pronoun + verb + personal pronoun", verbose=[
+  [["Siapa", "intp"], "Pred"], [["dia", "perp"], "S"], ["buat", "v"], ["kamu", "perp"]] )}}
 </dl>
 
 #### Asking about a thing or action
@@ -55,10 +55,13 @@ Finally, the third form _Apa + noun phrase?_, surprisingly, expresses a _what-qu
 ##### Examples
 <dl class="card">
 {{ vocab(id="Apa kabar?", en="How are you?", details="literally What's (the) news", pos="expresion") }}
-{{ vocab(id="Apa hobi kamu?", en="What are your hobbies?", pos="interrogative pronoun + noun + personal pronoun", verbose=[[["Apa", "intp"], "Pred"], [["hobi", "n"], ["kamu", "pronoun"], "S"]]) }}
-{{ vocab(id="Apa kita bisa pergi?", en="Can we go?") }}
-{{ vocab(id="Apa arti dari kata ini dalam bahasa Inggris?", en="What does this word mean in English?", pos="int. pronoun + noun + preposition + noun + dem. pronoun + preposition + noun phrase", verbose=[
-  [["Apa","intp"], "Pred"], [["arti", "n"], ["dari", "prep"], ["kata", "n"], ["ini", "demp"], ["dalam", "prep"], ["bahasa", "n"], ["Inggris", "n"], "S"] ]) }}
+{{ vocab(id="Apa hobi kamu?", en="What are your hobbies?", pos="interrogative pronoun + noun + personal pronoun", verbose=[[["Apa", "intp"], "P"], [["hobi", "n"], "S"], ["kamu", "perp"]]) }}
+{{ vocab(id="Apa kita bisa pergi?", en="Can we go?", pos="interrogative pronoun + personal pronoun + auxiliary verb + verb", verbose=[
+  ["Apa", "intp"], [["kita", "perp"], "S"], [["bisa", "auxv"], ["pergi", "v"], "P"]
+]) }}
+{{ vocab(id="Apa arti dari kata ini dalam bahasa Inggris?", en="What does this word mean in English?", pos="int. pronoun + noun + preposition + noun + dem. determiner + preposition + noun + noun", verbose=[
+  [["Apa","intp"], "Pred"], [["arti", "n"], ["dari", "prep"], ["kata", "n"], ["ini", "demd"], "S"], [["dalam", "prep"], ["bahasa", "n"], ["Inggris", "n"], "Prep"]
+]) }}
 </dl>
 
 ##### Quiz
