@@ -2,13 +2,13 @@
 title = "Basic sentence structure & context"
 slug = "01-basic-sentence-structure"
 date = "2025-09-13"
-updated = "2025-10-04"
+updated = "2025-10-24"
 [extra]
 next = "02-pronouns.md"
 summary = "The first introduction to _Indonesian_. Learn about _SVO_, the basic sentence structure, how to construct basic statements, as well as some interesting quirks that make _Indonesian_ special."
 +++
 
-> From this point on _Indonesian_ specifically refers to _Bahasa Indonesia_. While a lot of the presented information is shared with _Bahasa Malayu_, both being offsprings from _Classical Malay_, I'm neither educated enough, nor have the cultural understanding to point out the differences and nuances. Please feel free to contact me when you find mixups and errors.
+> From this point on _Indonesian_ specifically refers to _Bahasa Indonesia_. While a lot of the presented information is shared with _Bahasa Malayu_, both being offspring of _Classical Malay_, I'm neither educated enough, nor have the cultural understanding to point out the differences and nuances. Please feel free to contact me when you find mixups and errors.
 
 Similar to _English_ and most other Indo-European languages _Indonesian_ generally uses
 
@@ -29,9 +29,15 @@ While this is the most commonly used form, _Indonesian_ offers a lot of flexibil
 
 <h5>Examples</h5>
 <dl class="card examples">
-{{ vocab(id="Saya suka kucing", en="I like cats", pos="subject + verb + object") }}
-{{ vocab(id="Saya makan apel", en="I'm eating an apple", pos="subject + verb + object") }}
-{{ vocab(id="Saya menulis surat", en="I'm writing a letter", pos="subject + verb + object") }}
+{{ vocab(id="Saya suka kucing", en="I like cats", pos="personal pronoun + verb + noun", verbose=[
+  [["Saya", "perp"], "S"], ["suka", "v"], [["kucing", "n"], "O"]
+]) }}
+{{ vocab(id="Saya makan apel", en="I'm eating an apple", pos="personal pronoun + verb + noun", verbose=[
+  [["Saya", "perp"], "S"], ["makan", "v"], [["apel", "n"], "O"]
+]) }}
+{{ vocab(id="Saya menulis surat", en="I'm writing a letter", pos="personal pronoun + verb + noun", verbose=[
+  [["Saya", "perp"], "S"], ["menulis", "v"], [["surat", "n"], "O"]
+]) }}
 </dl>
 
 The first two simple sentences showcase how context heavy _Indonesian_ is, especially in casual daily conversations that use a lot of abbreviations. The first sentence, {{id(id="Saya suka kucing")}}, despite meaning **I like cats**, literally translates to "**I like cat**", with **cat** as a singular. The proper way to form the plural of a noun is by repetition, hence {{id(id="kucing-kucing", en="cats")}} is **cats**.

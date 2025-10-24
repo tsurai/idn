@@ -2,7 +2,7 @@
 title = "Pronouns & Demonstratives"
 slug = "02-pronouns"
 date = "2025-09-13"
-updated = "2025-10-22"
+updated = "2025-10-23"
 [extra]
 prev = "01-sentence-structure.md"
 next = "03-greetings-and-farewells.md"
@@ -32,13 +32,13 @@ Unlike _I_ the words for _We_ are not split by _formality_ but by _clusivity_. T
 
 ##### Examples
 <dl class="card examples">
-{{ vocab(id="Kami sempai besok", en="We will arrive tomorrow", pos="pronoun + verb + adverb") }}
-{{ vocab(id="Kita teman, kan?", en="We are friends, right?", pos="pronoun + noun + particle") }}
+{{ vocab(id="Kami sempai besok", en="We will arrive tomorrow", pos="personal pronoun + verb + adverb") }}
+{{ vocab(id="Kita teman, kan?", en="We are friends, right?", pos="personal pronoun + noun + particle") }}
 </dl>
 
 {{ id(id="Kami", en="we") }} _excludes_ the person being talked to. In the sentence {{ id(id="Kami akan tiba besok", en="We will arrive tomorrow") }} you are informing someone, who is not with you, that your group will arrive tomorrow. {{ id(id="Kita", en="we") }} on the other hand, _includes_ the person you are talking with, as shown in {{ id(id="Kita teman, kan?", en="We are friends, right?") }} which seeks confirmation from the other person.
 
-As discussed previously, _Indonesian_ heavily relies on context and often omits words; both examples follow this sentiment. {{ id(id="Kami sempai besok", en="We will arrive tomorrow") }} leaves out {{ id(id="akan", en="will") }} the word for **will** and in the case of {{ id(id="Kita teman, kan") }} the _verb_ **to be / are** which is {{ id(id="adalah", en="to be") }}. Depending on your choice of pronoun, or rather how formal they are, you might want to use "proper" complete sentences instead.
+As discussed previously, _Indonesian_ heavily relies on context and often omits words; both examples follow this sentiment. {{ id(id="Kami sempai besok", en="We will arrive tomorrow") }} leaves out {{ id(id="akan", en="will") }}, the word for **will** and in the case of {{ id(id="Kita teman, kan") }} the _verb_ **to be / are**, which is {{ id(id="adalah", en="to be") }}. Depending on your choice of pronoun, or rather how formal they are, you might want to use "proper" complete sentences instead.
 
 #### Second person
 <dl class="card grid4">
@@ -51,8 +51,8 @@ As discussed previously, _Indonesian_ heavily relies on context and often omits 
 
 ##### Examples
 <dl class="card examples">
-{{ vocab(id="Kamu tahu Michi?", en="Do you know Michi?", pos="pronoun + verb + object") }}
-{{ vocab(id="Kalian sedang apa?", en="What are you all doing?", pos="pronoun + adverb + interrogative pronoun") }}
+{{ vocab(id="Kamu tahu Michi?", en="Do you know Michi?", pos="personal pronoun + verb + proper noun") }}
+{{ vocab(id="Kalian sedang apa?", en="What are you all doing?", pos="personal pronoun + adverb + interrogative pronoun") }}
 </dl>
 
 Just like first person pronouns, the second person is split into a _formal_ and _casual_ form, {{ id(id="Anda", en="You") }} and {{ id(id="Kamu", en="You")}} respectively. Unlike _English_, _Indonesian_ has a separate word for the plural of _You_ or _You all_: {{id(id="Kalian", en="You (plural)")}}. It has a _casual_ tone and can be used in everyday conversations. There are more polite alternatives, but they are only rarely used and ignored at this point.
@@ -75,9 +75,9 @@ You might have noticed that all these pronouns are _gender-neutral_. The same is
 {{quiz(id="Kucing _ hitam", en="His/Her cat is black", options=["ia", "dia", "gw", "kita"], answers=["ia", "dia"])}}
 
 #### Possessive
-As the name implies _possessive pronouns_ indicate the possession of something. In english every _personal pronoun_ has its own corresponding _possessive pronoun_: **I** -> **My**, **You** -> **Yours**, **She** -> **Her** and so on. However, _Indonesian_ uses different systems to express the same idea. Instead of using special _pronouns_ the _noun_ itself is modified, either directly or by appending a _personal pronoun_.
+As the name implies _possessive pronouns_ indicate the possession of something. In English every _personal pronoun_ has its own corresponding _possessive pronoun_: **I** -> **My**, **You** -> **Yours**, **She** -> **Hers** and so on. However, _Indonesian_ uses different systems to express the same idea. Instead of using special _pronouns_ the _noun_ itself is modified, either directly or by appending a _personal pronoun_ or by using a _suffix_.
 
-To say **My cat** is as easy as adding one of the _first person pronoun_, {{id(id="Saya", en="I")}} / {{id(id="Aku", en="I")}} etc, after the noun for **cat** resulting in {{id(id="Kucing saya", en="My cat")}} / **My cat**. This works for all other _personal pronouns_ as well, regardless of the person used like {{id(id="Mobil mereka", en="Their car")}} / **Their car**. This can also be expanded to whole _noun phrases_ like {{id(id="Mobil merah mereka", en="Their red car")}} / **Their red car**.
+To say **My cat** is as easy as adding one of the _first person pronoun_, {{id(id="Saya", en="I")}} / {{id(id="Aku", en="I")}} etc, after the noun for **cat**, creating {{id(id="Kucing saya", en="My cat")}} / **My cat**. This works for all other _personal pronouns_ as well, regardless of the _person_ used like {{id(id="Mobil mereka", en="Their car")}} / **Their car**. This can also be expanded to whole _noun phrases_ like {{id(id="Mobil merah mereka", en="Their red car")}} / **Their red car**.
 
 Naturally it wouldn't be _Indonesian_ if there wasn't a shorter version as well. Instead of adding the whole pronoun after the noun we modify it directly with a corresponding _suffix_:
 
@@ -106,19 +106,26 @@ Naturally it wouldn't be _Indonesian_ if there wasn't a shorter version as well.
 
 ##### Examples
 <dl class="examples card">
-{{ vocab(id="Kucing saya", en="My cat", pos="noun + possessive pronoun") }}
-{{ vocab(id="Kucingnya hitam", en="Her black cat", pos="noun + pronoun suffix + adjective", verbose=[
-  [["Kucing", "n"], ["-nya", "posp"], "S"], ["hitam", "adj"]
+{{ vocab(id="Kucing saya", en="My cat", pos="noun + possessive pronoun", details="noun phrase") }}
+{{ vocab(id="Kucingmu hitam", en="Your cat is black", pos="noun + pronoun suffix + adjective", verbose=[
+  [["Kucing", "n"], ["-mu", "posp"], "S"], [["hitam", "adj"], "P"]
 ]) }}
-{{ vocab(id="Kucing putihmu", en="Your white cat", pos="subject + adjective + pronoun suffix") }}
+{{ vocab(id="Kucing hitammu", en="Your black cat", pos="noun+ adjective + pronoun suffix", details="noun phrase", verbose=[
+  [["Kucing", "n"], ["hitam", "adj"], ["-mu", "posp"], "S"]
+]) }}
 {{ vocab(id="Kucingnya juga punyaku", en="His cat is also mine", pos="noun + pronoun suffix + adverb + verb + pronoun suffix", verbose=[
   [["Kucing", "n"], ["-nya", "posp"], "S"], [["juga", "adverb"], ["punya", "verb"], ["-ku", "posp"], "P"]
 ]) }}
 </dl>
 
-The first two sentences are pretty straightforward and show the basic usage of both the explicit _pronoun_ and _suffix_ version. Moving on to the third sentence, {{id(id="Kucing putihmu", en="Your white cat")}} / **Your white cat** uses a slight variation. Instead of modifying the _noun_ {{id(id="kucing", en="cat")}}, the whole _noun phrase_ is changed by adding the _suffix_ {{id(id="-mu", en="your")}} to the final adjective {{id(id="putih", en="white")}} / **white**. This variation is often used in casual speech for short phrases.
+The first two sentences are pretty straightforward and show the basic usage of both the explicit _pronoun_ and _suffix_ version. Moving on to the third example, {{id(id="Kucing hitammu", en="Your black cat")}} / **Your black cat** uses a slight variation. Instead of modifying the _noun_ {{id(id="kucing", en="cat")}}, the whole _noun phrase_ is changed by adding the _suffix_ {{id(id="-mu", en="your")}} to the final adjective {{id(id="hitam", en="black")}} / **black**. This variation is often used in casual speech for short phrases.
 
-Finally, {{id(id="Kucingnya juga punyaku", en="His cat is also mine")}} is a bit more complex. The verb {{id(id="punya", en="to have")}} means **to have**, which when modified with a _possessive pronoun suffix_ turns into a general possessive to express things like {{id(id="Ini punyaku", en="This is mine")}} / **This is mine**.
+It is crucial to consider the position of the _possessive_ within a given sentence. The _possessive_ modifies a _noun phrase_ and returns a new _noun phrase_. On its own, it does not form a _complete sentence_.
+
+Example one and two show the difference. Both use the same words but in a slightly different order. When you break down {{id(id="Kucingmu hitam", en="Your cat is black")}}, you will see that {{id(id="-mu", en="your")}} only modifies {{id(id="kucing", en="cat")}} to form the new _noun phrase_ **Your cat**. This _noun phrase_ now acts as the _subject_ for the _adjective_ {{id(id="hitam", en="black")}} which acts as the _predicate_. The final result is a proper _subject + predicate_ structure. {{id(id="Kucing hitammu", en="Your black cat")}} on the other hand, pulls {{id(id="hitam", en="black")}} into the _noun phrase_ itself which removes the _predicate_, leaving us with just the _noun phrase_ describing something. This is reflected in their respective translations: **Your cat is black** and just **Your black cat**.
+
+
+Finally, {{id(id="Kucingnya juga punyaku", en="His cat is also mine")}} is a bit more complex. The verb {{id(id="punya", en="to have")}} means **to have**, which when modified with a _possessive pronoun suffix_ turns into a general possessive to express things like {{id(id="Ini punyaku", en="This is mine")}} / **This is mine**. Although a bit tricky, this is a _complete sentence_. It uses two _possessives_ that both create independent _noun phrases_, with {{id(id="Kucingnya", en="Her/His cat")}} acting as the _subject_ and {{id(id="juga punyaku", en="also mine")}} as the _predicate_.
 
 #### Demonstratives
 

@@ -2,7 +2,7 @@
 title = "Conjugation: Tense & Voice"
 slug = "04-verb-modification"
 date = "2025-09-13"
-updated = "2025-09-13"
+updated = "2025-09-23"
 [extra]
 prev = "03-greetings-and-farewells.md"
 next = "05-asking-questions.md"
@@ -29,14 +29,20 @@ To illustrate the difference, let's have a look at {{id(id="sudah", en="already 
 ##### Examples
 <dl class="card examples">
 {{ vocab(id="Aku sudah makan nasi", en="I ate rice", pos="personal pronoun + particle + verb + noun", verbose=[
-  [["Aku", "perp"], "S"], ["sudah", "par"], ["makan", "v"], [["nasi", "n"], "O"]
+  [["Aku", "perp"], "S"], [["sudah", "par"], ["makan", "v"], [["nasi", "n"], "O"], "P"]
 ]) }}
 {{ vocab(id="Aku akan makan nasi", en="I will eat rice", pos="personal pronoun + particle + verb + noun", verbose=[
-  [["Aku", "perp"], "S"], ["akan", "par"], ["makan", "v"], [["nasi", "n"], "O"]
-] }}
-{{ vocab(id="Besok aku akan sudah makan nasi", en="I will have eaten rice tomorrow", pos="noun + personal pronoun + particle + particle + verb + noun") }}
-{{ vocab(id="Aku belum belajar", en="I haven't studied yet", pos="personal pronoun + particle + verb") }}
-{{ vocab(id="Aku masih belajar indonesia", en="I'm still learning Indonesian", pos="personal pronoun + particle + verb + object") }}
+  [["Aku", "perp"], "S"], [["akan", "par"], ["makan", "v"], [["nasi", "n"], "O"], "P"]
+]) }}
+{{ vocab(id="Besok aku akan sudah makan nasi", en="I will have eaten rice tomorrow", pos="adverb + personal pronoun + particle + particle + verb + noun", verbose=[
+  ["Besok","adv"], [["Aku", "perp"], "S"], [["akan", "par"], ["makan", "v"], [["nasi", "n"], "O"], "P"]
+]) }}
+{{ vocab(id="Aku belum belajar", en="I haven't studied yet", pos="personal pronoun + particle + verb", verbose=[
+    [["Aku", "perp"], "S"], [["belum", "par"], ["belajar", "v"], "P"]
+]) }}
+{{ vocab(id="Aku masih belajar indonesia", en="I'm still learning Indonesian", pos="personal pronoun + particle + verb + noun", verbose=[
+    [["Aku", "perp"], "S"], [["masih", "par"], ["belajar", "v"], [["indonesia", "n"], "O"], "P"]
+]) }}
 </dl>
 
 ##### Quiz
@@ -88,13 +94,13 @@ You might think that **me-** merely adds a **to ___** to a given root word but t
 ##### Examples
 <dl class="card examples">
 {{ vocab(id="Dia menulis surat", en="She writes a letter", pos="personal pronoun + verb (me- + tulis) + noun", verbose=[
-  [["Dia", "perp"], "S"], ["menulis", "v"], [["surat", "n"], "S"]
+  [["Dia", "perp"], "S"], ["menulis", "v"], [["surat", "n"], "O"]
 ]) }}
 {{ vocab(id="Aku membaca buku", en="I read a book", pos="personal pronoun + verb (me- + baca) + noun", verbose=[
-    [["Aku", "perp"], "S"], ["membaca", "v"], [["buku", "n"], "S"]
+    [["Aku", "perp"], "S"], ["membaca", "v"], [["buku", "n"], "O"]
 ]) }}
 {{ vocab(id="Saya makan apel", en="I eat an apple", pos="personal pronoun + verb + noun", details="makan is Verb Root word and doesn't need me-", verbose =[
-    [["Saya", "perp"], "S"], ["makan", "v"], [["apel", "n"], "S"]
+    [["Saya", "perp"], "S"], ["makan", "v"], [["apel", "n"], "O"]
 ]) }}
 </dl>
 
@@ -124,7 +130,7 @@ Depending on the content, different forms can be used to construct a _passive_ s
 But if the _verb_ and _actor_ are separated by another phrase, the word {{id(id="oleh",en="by")}} / **by** has to be added before the _actor_ to mark it as such. **By** in this context specifically only refers to the _actor_ and can be thought of as **because of**. Don't confuse it with **by means of** as in **by train**, because that is a completely different word, {{id(id="dengan",en="by means of / with")}}.
 
 ##### Type 2 short passive
-This type of _passive_ is often used in casual conversations, but requires the _actor_ to be a 1st or 2nd person _pronoun_. Rather than modifying the _verb_ itself, the position of the _pronoun_ relative to the _verb_ changes to indicates the _passive_. It is placed either directly proceeding the _verb_ or added in its _possessive pronoun_ suffix form. The _type 2 passive_ cannot be combined with {{id(id="oleh", en="by")}} / **by** as the _actor_, in this case the _pronoun_ has to stay directly proceeding the _verb_.
+This type of _passive_ is often used in casual conversations, but requires the _actor_ to be a 1st or 2nd person _pronoun_. Rather than modifying the _verb_ itself, the position of the _pronoun_ relative to the _verb_ changes to indicate the _passive_. It is placed either directly proceeding the _verb_ or added in its _possessive pronoun_ suffix form. The _type 2 passive_ cannot be combined with {{id(id="oleh", en="by")}} / **by** as the _actor_, in this case the _pronoun_ has to stay directly proceeding the _verb_.
 
 1. _Undergoer (Subject) + 1st or 2nd Person Pronoun (Object) + Verb_
 1. _Undergoer (Subject) + verb-ku,-mu,-nya_
@@ -132,24 +138,24 @@ This type of _passive_ is often used in casual conversations, but requires the _
 ##### Examples
 <dl class="card examples">
 {{ vocab(id="Tikus dikejar kucing", en="The rat is chased by a cat", pos="noun + verb + noun", verbose=[
-  [["Tikus", "n"], "S"], ["dikejar", "pasv"], [["kucing", "n"], "O"]
+  [["Tikus", "n"], "S"], [["dikejar", "pasv"], [["kucing", "n"], "O"], "P"]
 ]) }}
-{{ vocab(id="Dia aku pukul", en="He/She was hit by me", pos="personal pronoun + personal pronoun + verb", verbose=[
-  [["Dia", "perp"], "S"], [["aku", "perp"], "O"], ["pukul", "v"]
+{{ vocab(id="Dia aku pukul", en="She / He was hit by me", pos="personal pronoun + personal pronoun + verb", verbose=[
+  [["Dia", "perp"], "S"], [[["aku", "perp"], "O"], ["pukul", "v"], "P"]
 ]) }}
-{{ vocab(id="Dia pukulku", en="He/She was hit by me", pos="personal pronoun + verb + possessive pronoun suffix", verbose=[
-  [["Dia", "perp"], "S"], [["pukul", "verb"], ["-ku", "posp"], "P"]
+{{ vocab(id="Dia pukulku", en="He / She was hit by me", pos="personal pronoun + verb + possessive pronoun suffix", verbose=[
+  [["Dia", "perp"], "S"], [["pukul", "verb"], [["-ku", "posp"], "O"], "P"]
 ]) }}
 {{ vocab(
   id="Buku yang aku pinjam udah aku balikin kemarin",
   en="The book I borrowed was already returned by me yesterday",
-  pos="noun + conjunction + personal pronoun + verb + + adverb + personal pronoun + verb + adverb",
+  pos="noun + subordinator + personal pronoun + verb + adverb + personal pronoun + verb + adverb",
   verbose=[
-    [["Buku", "n"], ["yang", "conj"], ["aku", "p"], ["pinjam", "v"], "S"],
-    ["uda", "adv"],
-    [["aku", "p"], "A"],
+    [["Buku", "n"], ["yang", "sub"], ["aku", "perp"], ["pinjam", "v"], "S"],
+    [["udah", "adv"],
+    ["aku", "perp"],
     ["balikin", "v"],
-    ["kemarin", "adv"]
+    ["kemarin", "adv"], "P"]
   ])
 }}
 </dl>

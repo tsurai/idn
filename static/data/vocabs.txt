@@ -2,7 +2,7 @@
 2,1,suka,to like,verb,,Saya suka apel,I like apples
 3,1,makan,to eat,verb root,,
 4,1,minum,to drink,verb root,,Saya minum air,I'm drinking water
-5,1,kucing,cat,noun,,Kucing saya hitam,My cat is black
+5,1,kucing,cat,noun,,Dia kucing sukku,She likes cats,Kucing saya hitam,My cat is black
 6,1,apel,apple,noun,,
 7,1,kucing-kucing,cats,noun,plural by repetition,
 8,1,air,water,noun,,Saya minum air,I'm drinking water
@@ -45,4 +45,4 @@
 45,2,dia,he / she,pronoun,casual gender-neutral,Dia suka apel,He / She likes apples
 46,2,beliau,he / she,pronoun,Very formal gender-neutral,
 47,2,mereka,they,pronoun,plural gender-neutral,Mereka ada di sini
-48,2,noun + pronoun,My / Your / Her / His / Their + noun,possessive construct,,Nama aku,My name,Kucing dia,Her / His cat
+48,2,noun + personal pronoun,My / Your / Her / His / Their + noun,possessive construct,,Nama aku,My name,Kucing dia,Her / His cat

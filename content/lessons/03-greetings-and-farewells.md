@@ -33,7 +33,7 @@ When two people or parties separate, with one of them leaving and the other stay
 <dl class="card examples">
 {{ vocab(id="Selamat sore", en="Good afternoon", pos="adjective + noun (phrase)") }}
 {{ vocab(id="Selamat malam", en="Good night", pos="adjective + noun (phrase)", details="both a greeting and farewell") }}
-{{ vocab(id="halo, apa kabar?", en="Hello, how are you?", pos="interjecton + predicate + subject") }}
+{{ vocab(id="halo, apa kabar?", en="Hello, how are you?", pos="interjecton + predicate + noun") }}
 </dl>
 
 #### Casual
