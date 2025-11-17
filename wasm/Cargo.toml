@@ -2,7 +2,7 @@
 name = "idn"
 version = "0.1.0"
 authors = ["Cristian Kubis <github@tsunix.de>"]
-edition = "2018"
+edition = "2024"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

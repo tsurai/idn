@@ -17,7 +17,7 @@
 
         await init();
         try {
-          let idn = await Idn.new();
+          let idn = await Idn.new(2);
           {%- block func %}{% endblock func -%}
         }
         catch(e) {

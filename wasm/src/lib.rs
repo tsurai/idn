@@ -29,7 +29,7 @@ pub struct Idn {
 #[wasm_bindgen]
 impl Idn {
     #[wasm_bindgen]
-    pub async fn new() -> Result<Idn, JsValue> {
+    pub async fn new(version: u32) -> Result<Idn, JsValue> {
         std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 
         JsFuture::from(web_sys::window()
@@ -39,13 +39,11 @@ impl Idn {
             .register("/idn/worker.js"))
             .await?;
 
-        let db = Rc::new(db::IdxDb::new().await?);
-        db.init().await?;
-
+        let db = Rc::new(db::IdxDb::new(version).await?);
         let ui = ui::Ui::new()?;
 
         Ok(Self {
-            db: db,
+            db,
             ui: Rc::new(ui),
         })
     }
@@ -68,28 +66,5 @@ impl Idn {
         if let Err(e) = self.ui.stats(self.db.clone()).await {
             crate::console_log!("error: {e:?}");
         }
-    }
-}
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use chrono::Utc;
-    
-    //use chrono::{DateTime, Duration, Utc};
-    use rs_fsrs::{FSRS, Card, Rating};
-
-    #[test]
-    fn test() {
-        // Create a new FSRS model
-        let fsrs = FSRS::default();
-
-        let card = Card::new();
-
-        println!("{}", fsrs.next(card.clone(), Utc::now(), Rating::Again).card.due);
-        println!("{}", fsrs.next(card.clone(), Utc::now(), Rating::Hard).card.due);
-        println!("{}", fsrs.next(card.clone(), Utc::now(), Rating::Good).card.due);
-        println!("{}", fsrs.next(card.clone(), Utc::now(), Rating::Easy).card.due);
     }
 }

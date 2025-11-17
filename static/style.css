@@ -336,11 +336,14 @@ nav:has(section.status) {
 }
 
 nav :is(section.status:first-child button, section.status:last-child) {
-    background-color: var(--purple);
     background: var(--fancy);
     color: var(--white);
 }
 
+nav section.status:last-child button {
+    background: var(--bg);
+    color: var(--fg);
+}
 section.status:last-child {
     box-shadow: var(--shadow2);
 }

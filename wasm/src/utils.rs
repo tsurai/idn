@@ -1,6 +1,5 @@
 use wasm_bindgen::JsValue;
-use rs_fsrs::{Card, Rating, State};
-use crate::db::Vocab;
+use rs_fsrs::{Rating, State};
 
 pub fn card_to_object(card: rs_fsrs::Card) -> Result<js_sys::Object, JsValue> {
     let obj = js_sys::Object::new();

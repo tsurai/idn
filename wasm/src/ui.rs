@@ -94,7 +94,7 @@ impl Ui {
     }
 
     pub async fn init_learn(&self, db: Rc<IdxDb>) -> Result<(), JsValue> {
-        if let Some(_) = Self::show_lesson_card(db.clone()).await? {
+        if Self::show_lesson_card(db.clone()).await?.is_some() {
             let next_cb = Closure::<dyn FnMut(_)>::new(move |_: web_sys::Event| {
                 let db = db.clone();
                 spawn_local(async move {
@@ -200,7 +200,7 @@ impl Ui {
         let mut output = String::new();
         let num_sentences = sentences.len();
 
-        if num_sentences > 0 && num_sentences % 2 == 0 {
+        if num_sentences > 0 && num_sentences.is_multiple_of(2) {
             for s in sentences.as_slice().chunks(2) {
                 output.push_str(&format!("<dt><dfn lang=\"id\">{}</dfn></dt><dd lang=\"en\"><b>{}</b></dd>", s[0], s[1]));
             }

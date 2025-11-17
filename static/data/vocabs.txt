@@ -8,7 +8,7 @@
 8,1,air,water,noun,,Saya minum air,I'm drinking water
 9,1,bus,bus,noun,pronounced as bis,
 10,1,nasi,rice,noun,,Saya makan nasi goreng,I'm eating fried rice
-11,4,punya,have,non-verb root,often used as a verb despite being a non-verb root,Saya punya kucing,I have a cat
+11,2,punya,have,non-verb root,often used as a verb despite being a non-verb root,Saya punya kucing,I have a cat
 12,1,dari,from / of,preposition,,Saya dari Kanada,I am from Kanada,Kamu dari mana?,Where are you from?
 13,1,belajar,to learn,verb,,Saya belajar Indonesia,I'm learning Indonesian
 14,1,sedang,at the moment / in the process of,adverb,formal,Saya sedang makan Indomie,I'm eating Indomie
@@ -22,7 +22,7 @@
 22,1,datang,to come,verb,,Kenapa kamu datang?,Why did you come?
 23,1,pikir,think,non-verb root,formal,Saya pikir ini bagus,I think this is good,Aku sedang berpikir,I'm thinking,Saya memikirkan masalah ini,I'm thinking about this problem
 24,3,halo,hello,interfection,polite / neutral,Helo senang bertumu dengan anda,Hello nice to meet you
-25,4,selamat,safe / well / congratulation,adjective / noun,,Selamat pagi,Good morning
+25,3,selamat,safe / well / congratulation,adjective / noun,,Selamat pagi,Good morning
 26,3,pagi,morning,noun,,Selamat pagi,Good morning
 27,3,siang,noon,noun,,Selamat siang,Good noon / Good day
 28,3,sore,afternoon,noun,,Selamat sore,Good afternoon
@@ -45,4 +45,11 @@
 45,2,dia,he / she,pronoun,casual gender-neutral,Dia suka apel,He / She likes apples
 46,2,beliau,he / she,pronoun,Very formal gender-neutral,
 47,2,mereka,they,pronoun,plural gender-neutral,Mereka ada di sini
-48,2,noun + personal pronoun,My / Your / Her / His / Their + noun,possessive construct,,Nama aku,My name,Kucing dia,Her / His cat
+48,2,noun (phrase) + personal pronoun,My / Your / Her / His / Their + noun,possessive construct,,Nama aku,My name,Kucing dia,Her / His cat
+49,2,Nama saya,My name,possessive phrase,formal,Nama saya Michi,My name is Michi
+50,2,noun (phrase) + -ku / -mu / -nya ,My / Your / Her / His / Their + noun,possessive construct,,Kucingmu,Your cat
+51,2,namanya,Her / His name,possessive phrase,gender-neutral,Siapa namanya?,What is her name?
+52,5,bahasa,language,noun,,Bahasa inggris,The English language
+53,5,Inggris,English,proper noun,,
+54,5,arti,meaning,noun,,Apa arti dari ini?
+55,3,belum,not yet,particle,negative perfect,Aku belum belajar,I haven't studied yet
