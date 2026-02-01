@@ -23,48 +23,69 @@ macro_rules! console_log {
 #[wasm_bindgen]
 pub struct Idn {
     db: Rc<db::IdxDb>,
-    ui: Rc<ui::Ui>,
+    ui: Option<Rc<ui::Ui>>,
 }
 
 #[wasm_bindgen]
 impl Idn {
     #[wasm_bindgen]
-    pub async fn new(version: u32) -> Result<Idn, JsValue> {
+    pub async fn new() -> Result<Idn, JsValue> {
         std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 
-        JsFuture::from(web_sys::window()
-            .ok_or("failed to get window")?
-            .navigator()
-            .service_worker()
-            .register("/idn/worker.js"))
+        let db = Rc::new(db::IdxDb::new().await?);
+
+        if Self::is_worker() {
+            Ok(Self { db, ui: None })
+        } else {
+            JsFuture::from(
+                web_sys::window()
+                    .ok_or("failed to get window")?
+                    .navigator()
+                    .service_worker()
+                    .register("/idn/service_worker.js"),
+            )
             .await?;
 
-        let db = Rc::new(db::IdxDb::new(version).await?);
-        let ui = ui::Ui::new()?;
+            let ui = ui::Ui::new()?;
 
-        Ok(Self {
-            db,
-            ui: Rc::new(ui),
-        })
+            Ok(Self {
+                db,
+                ui: Some(Rc::new(ui)),
+            })
+        }
+    }
+
+    // Determines whether the code is running as a worker or main thread script
+    pub fn is_worker() -> bool {
+        web_sys::window().is_none()
     }
 
     #[wasm_bindgen]
     pub async fn review(&self) -> Result<(), JsValue> {
-        self.ui.init_review(self.db.clone()).await?;
+        if let Some(ref ui) = self.ui {
+            ui.init_review(self.db.clone()).await?;
+        }
         Ok(())
     }
 
     #[wasm_bindgen]
-    pub async fn learn(&self) {
-        if let Err(e) = self.ui.init_learn(self.db.clone()).await {
-            crate::console_log!("error: {e:?}");
+    pub async fn learn(&self) -> Result<(), JsValue> {
+        if let Some(ref ui) = self.ui {
+            ui.init_learn(self.db.clone()).await?
         }
+        Ok(())
     }
 
     #[wasm_bindgen]
-    pub async fn stats(&self) {
-        if let Err(e) = self.ui.stats(self.db.clone()).await {
-            crate::console_log!("error: {e:?}");
+    pub async fn stats(&self) -> Result<(), JsValue> {
+        if let Some(ref ui) = self.ui {
+            ui.stats(self.db.clone()).await?;
         }
+        Ok(())
+    }
+
+    #[wasm_bindgen]
+    pub async fn add_sentences(&self, vocab: &str) -> Result<(), JsValue> {
+        self.db.add_sentences(vocab).await
     }
 }

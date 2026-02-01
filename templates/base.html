@@ -17,11 +17,11 @@
 
         await init();
         try {
-          let idn = await Idn.new(2);
+          let idn = await Idn.new();
           {%- block func %}{% endblock func -%}
         }
         catch(e) {
-          console.log(e);
+          console.error(e);
         }
       }
       run();

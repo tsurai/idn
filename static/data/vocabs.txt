@@ -2,7 +2,7 @@
 2,1,suka,to like,verb,,Saya suka apel,I like apples
 3,1,makan,to eat,verb root,,
 4,1,minum,to drink,verb root,,Saya minum air,I'm drinking water
-5,1,kucing,cat,noun,,Dia kucing sukku,She likes cats,Kucing saya hitam,My cat is black
+5,1,kucing,cat,noun,,Dia kucing suka,She likes cats,Kucing saya hitam,My cat is black
 6,1,apel,apple,noun,,
 7,1,kucing-kucing,cats,noun,plural by repetition,
 8,1,air,water,noun,,Saya minum air,I'm drinking water

@@ -1,8 +1,9 @@
 use chrono::{DateTime, Datelike, Utc};
-use wasm_bindgen::{JsCast, prelude::*};
-use wasm_bindgen_futures::{spawn_local};
-use web_sys::{HtmlButtonElement, HtmlElement, HtmlInputElement, HtmlTimeElement};
 use rs_fsrs::FSRS;
+use wasm_bindgen::{JsCast, prelude::*};
+use wasm_bindgen_futures::spawn_local;
+use web_sys::{Event, Worker, WorkerOptions, WorkerType};
+use web_sys::{HtmlButtonElement, HtmlElement, HtmlInputElement, HtmlTimeElement};
 
 use std::rc::Rc;
 
@@ -19,12 +20,13 @@ impl Ui {
             document: web_sys::window()
                 .ok_or("failed to get window")?
                 .document()
-                .ok_or("failed to get document")?
+                .ok_or("failed to get document")?,
         })
     }
 
     pub async fn init_review(&self, db: Rc<IdxDb>) -> Result<(), JsValue> {
-        let card_ele = self.document
+        let card_ele = self
+            .document
             .query_selector("section.vocab")?
             .ok_or("failed to get card element")?;
 
@@ -40,7 +42,8 @@ impl Ui {
 
         let d = db.clone();
         let answer_cb = Closure::<dyn FnMut(_)>::new(move |evt: web_sys::Event| {
-            if let Some(rating) = evt.target()
+            if let Some(rating) = evt
+                .target()
                 .and_then(|x| x.dyn_into::<HtmlButtonElement>().ok())
                 .and_then(|x| x.value().parse::<usize>().ok())
             {
@@ -78,10 +81,7 @@ impl Ui {
             }
         });
 
-        for node in self.document
-            .query_selector_all("button.answer")?
-            .values()
-        {
+        for node in self.document.query_selector_all("button.answer")?.values() {
             node?
                 .dyn_into::<web_sys::HtmlButtonElement>()?
                 .set_onclick(Some(answer_cb.as_ref().unchecked_ref()));
@@ -94,9 +94,23 @@ impl Ui {
     }
 
     pub async fn init_learn(&self, db: Rc<IdxDb>) -> Result<(), JsValue> {
+        let options = WorkerOptions::new();
+        options.set_type(WorkerType::Module);
+        let worker = Rc::new(Worker::new_with_options("/idn/worker.js", &options)?);
+
+        let w = worker.clone();
+        let worker_exit_callback = Closure::<dyn FnMut(_)>::new(move |_: Event| {
+            w.terminate();
+        });
+        web_sys::window()
+            .ok_or("failed to get window")?
+            .set_onbeforeunload(Some(worker_exit_callback.as_ref().unchecked_ref()));
+        worker_exit_callback.forget();
+
         if Self::show_lesson_card(db.clone()).await?.is_some() {
             let next_cb = Closure::<dyn FnMut(_)>::new(move |_: web_sys::Event| {
                 let db = db.clone();
+                let w = worker.clone();
                 spawn_local(async move {
                     let document = web_sys::window()
                         .expect("failed to get window")
@@ -110,9 +124,8 @@ impl Ui {
                         .value()
                         .parse::<usize>()
                         .expect("invalid id format");
-                    db.create_card(id)
-                        .await
-                        .expect("failed to create card");
+                    let vocab = db.create_card(id).await.expect("failed to create card");
+                    w.post_message(&vocab.into()).ok();
 
                     if let Err(e) = Self::show_lesson_card(db.clone()).await {
                         crate::console_log!("failed to get vocab card: {e:?}");
@@ -202,7 +215,10 @@ impl Ui {
 
         if num_sentences > 0 && num_sentences.is_multiple_of(2) {
             for s in sentences.as_slice().chunks(2) {
-                output.push_str(&format!("<dt><dfn lang=\"id\">{}</dfn></dt><dd lang=\"en\"><b>{}</b></dd>", s[0], s[1]));
+                output.push_str(&format!(
+                    "<dt><dfn lang=\"id\">{}</dfn></dt><dd lang=\"en\"><b>{}</b></dd>",
+                    s[0], s[1]
+                ));
             }
         }
 
@@ -242,9 +258,9 @@ impl Ui {
 
             match db.get_review_card().await {
                 Ok(Some((_, vocab))) => {
-                    Self::show_vocab(&vocab)
-                        .expect("vocab card");
-                    document.get_element_by_id("card")
+                    Self::show_vocab(&vocab).expect("vocab card");
+                    document
+                        .get_element_by_id("card")
                         .expect("front element")
                         .dyn_into::<HtmlElement>()
                         .expect("expected element")
@@ -252,15 +268,17 @@ impl Ui {
                         .ok();
                 }
                 Ok(None) => {
-                    if let Ok((Some(date),_)) = db.get_review_stats().await {
-                        document.get_element_by_id("review_time")
+                    if let Ok((Some(date), _)) = db.get_review_stats().await {
+                        document
+                            .get_element_by_id("review_time")
                             .expect("time element")
                             .dyn_into::<HtmlTimeElement>()
                             .expect("expected time element")
                             .set_inner_html(&Self::date_to_fancy(date));
                     }
 
-                    document.get_element_by_id("card")
+                    document
+                        .get_element_by_id("card")
                         .expect("card element")
                         .dyn_into::<HtmlElement>()
                         .expect("expected element")

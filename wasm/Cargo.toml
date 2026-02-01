@@ -11,7 +11,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-wasm-bindgen = "0.2.84"
+wasm-bindgen = "0.2"
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
@@ -19,10 +19,10 @@ wasm-bindgen = "0.2.84"
 console_error_panic_hook = { version = "0.1.7", optional = true }
 # chrono = { version = "0.4.23", features = ["serde"] }
 rs-fsrs = "1.2.0"
-js-sys = "0.3.78"
-futures-util = "0.3.31"
-wasm-bindgen-futures = { version = "0.4.51", features = ["futures-core-03-stream"] }
-chrono = "0.4.42"
+js-sys = "0.3"
+futures-util = "0.3"
+wasm-bindgen-futures = { version = "0.4", features = ["futures-core-03-stream"] }
+chrono = "0.4"
 
 [dependencies.web-sys]
 version = "0.3.72"
@@ -53,6 +53,11 @@ features = [
   "IdbObjectStore",
   "IdbObjectStoreParameters",
   "IdbTransactionMode",
+  "MessageEvent",
+  "Worker",
+  "WorkerOptions",
+  "WorkerType",
+  "DedicatedWorkerGlobalScope",
   "ServiceWorker",
   "ServiceWorkerContainer",
   "Response",
