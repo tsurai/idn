@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Asking Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();await idn.stats();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main><article>
+  <header>
+    <h3 class="fancy">Asking Questions</h3>
+    <time datetime="2025-10-24">Last updated on 2025-10-24</time>
+  </header>
+  <section><p>After the rather theory-heavy previous chapter, it's time to return the focus to more practical matters, namely how to ask questions. Once we know how to ask what, where, when, why etc. we are really to start asking questions about <em>Indonesian</em> in <em>Indonesian</em> itself.</p>
+<h4 id="asking-about-a-people-and-identities">Asking about a people and identities</h4>
+<p><span lang="id" title="who">Siapa</span>
+ is <em>roughly</em> equivalent to the <em>English</em> word <strong>who</strong> but with a crucial difference. Some properties are considered <em>inherit</em> to the person and as such still use <span lang="id" title="who">siapa</span>
+ / <strong>who</strong>, even if we would say <strong>what</strong> in English. A classic example is <span lang="id" title="What is your name?">Siapa nama anda?</span>
+ / <strong>What's your name?</strong>. A persons name is seen as part of their <em>identity</em> instead of a <em>thing</em> attached to them. Luckily there aren't too much exceptions like this.</p>
+<h5 id="examples">Examples</h5>
+<dl class="card">
+<div>
+  <dt>
+    <dfn lang="id">Siapa nama anda?</dfn><details>
+        <summary>interrogative pronoun + noun + personal pronoun</summary><span class="pos">Siapa<sub>intp</sub><sup>P</sup></span><span class="pos"><span class="pos">nama<sub>n</sub></span><span class="pos">anda<sub>perp</sub></span><sup>S</sup></span></details></dt>
+  <dd lang="en">
+    <b>What is your name?</b>
+    <em>(formal)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Itu siapa?</dfn><details>
+        <summary>demonstrative pronoun + interrogative pronoun</summary><span class="pos">Itu<sub>demp</sub><sup>S</sup></span><span class="pos">siapa<sub>intp</sub><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>Who is that?</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Siapa dia buat kamu?</dfn><details>
+        <summary>interogative pronoun + personal pronoun + verb + personal pronoun</summary><span class="pos">Siapa<sub>intp</sub><sup>Pred</sup></span><span class="pos">dia<sub>perp</sub><sup>S</sup></span><span class="pos">buat<sub>v</sub></span><span class="pos">kamu<sub>perp</sub></span></details></dt>
+  <dd lang="en">
+    <b>What is she &#x2F; he to you</b>
+  </dd>
+</div>
+
+</dl>
+<h4 id="asking-about-a-thing-or-action">Asking about a thing or action</h4>
+<p>The word <span lang="id" title="what">apa</span>
+ is used for asking about a <em>thing</em> or <em>action</em>, often similar <strong>what</strong>. However, in can express a lot more and is very flexible. Especially its positioning within a sentence can drastically change the meaning of <span lang="id" title="what">apa</span>
+. Lets start with the three most basic forms you will come across:</p>
+<ol>
+<li><em>Subject + verb / noun + apa?</em></li>
+<li><em>Apa + subject + verb?</em></li>
+<li><em>Apa + noun phrase?</em></li>
+</ol>
+<p>The first form is the classic <em>what-question</em>, for example <span lang="id" title="What did you eat?">Kamu makan apa?</span>
+ translates to <strong>What did you eat?</strong>. This should be very straight forward and what you would expect when people say that <span lang="id" title="what">apa</span>
+ means <strong>what</strong>. So what happens when we move <span lang="id" title="what">apa</span>
+ from the end to the beginning of the sentence?</p>
+<p>When <span lang="id" title="what">apa</span>
+ is placed in front of the sentence its <em>grammatical function</em> changes to a <em>question particle</em>. Essentially, it turns the whole sentence into a yes/no question. Changing our previous sentence <span lang="id" title="What did you eat?">Kamu makan apa?</span>
+ / <strong>What did you eat?</strong> to <span lang="id" title="Did you eat?">Apa kamu makan?</span>
+ results in the yes/no question <strong>Did you eat?</strong> or <strong>Have you eaten?</strong>.</p>
+<p>In this form <span lang="id" title="what">apa</span>
+ mainly functions as a <em>grammatical marker</em> and its literal translation is gone. Given the last example, you might think that it still has a direct translation in <strong>did</strong> or <strong>have</strong>. But this is only the result of trying to express <em>Indonesian</em> in the context of the <em>English</em> language. This becomes clear when we add an <em>auxiliary verb</em> like <span lang="id" title="will">akan</span>
+ / <strong>will</strong> or <span lang="id" title="can">bisa</span>
+ / <strong>can</strong>.</p>
+<p>For example, <span lang="id" title="Will you eat?">Apa kamu akan makan?</span>
+ / <strong>Will you eat?</strong> and <span lang="id" title="Can you eat?">Apa kamu bisa makan?</span>
+ / <strong>Can you eat?</strong>, both lack any literal translation of <span lang="id" title="what">apa</span>
+, it is purely a <em>grammatical marker</em>. As mentioned before, <em>Indonesian</em> is <em>very</em> context heavy and fluid. Instead of recontextualize everything to <em>English</em> or any other language, try to take <em>Indonesian</em> for what it is and get used to its native concepts.</p>
+<p>Finally, the third form <em>Apa + noun phrase?</em>, surprisingly, expresses a <em>what-question</em> like the first form if <span lang="id" title="what">apa</span>
+ is followed by a <em>noun phrase</em>. <span lang="id" title="What is your hobby?">Apa kamu hobi?</span>
+ means the same as <span lang="id" title="What is your hobby?">Kamu hobi apa?</span>
+, <strong>What is your hobby?</strong>. The difference is that the former sounds more formal and stiff while the later more casual and natural.</p>
+<h5 id="vocabulary">Vocabulary</h5>
+<dl class="card grid3">
+<div>
+  <dt>
+    <dfn lang="id">apa</dfn><span>interrogative pronoun</span></dt>
+  <dd lang="en">
+    <b>how &#x2F; what</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">word</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>kata</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">arti</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>meaning &#x2F; significance</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">bahasa</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>language</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Inggris</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>English</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">hobi</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>Hobby</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">bisa</dfn><span>auxiliary verb</span></dt>
+  <dd lang="en">
+    <b>can</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">pergi</dfn><span>verb root</span></dt>
+  <dd lang="en">
+    <b>to go</b>
+  </dd>
+</div>
+
+</dl>
+<h5 id="examples-1">Examples</h5>
+<dl class="card">
+<div>
+  <dt>
+    <dfn lang="id">Apa kabar?</dfn><span>expresion</span></dt>
+  <dd lang="en">
+    <b>How are you?</b>
+    <em>(literally What&#x27;s (the) news)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Apa hobi kamu?</dfn><details>
+        <summary>interrogative pronoun + noun + personal pronoun</summary><span class="pos">Apa<sub>intp</sub><sup>P</sup></span><span class="pos">hobi<sub>n</sub><sup>S</sup></span><span class="pos">kamu<sub>perp</sub></span></details></dt>
+  <dd lang="en">
+    <b>What are your hobbies?</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Apa kita bisa pergi?</dfn><details>
+        <summary>interrogative pronoun + personal pronoun + auxiliary verb + verb</summary><span class="pos">Apa<sub>intp</sub></span><span class="pos">kita<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">bisa<sub>auxv</sub></span><span class="pos">pergi<sub>v</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>Can we go?</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Apa arti dari kata ini dalam bahasa Inggris?</dfn><details>
+        <summary>int. pronoun + noun + preposition + noun + dem. determiner + preposition + noun + noun</summary><span class="pos">Apa<sub>intp</sub><sup>Pred</sup></span><span class="pos"><span class="pos">arti<sub>n</sub></span><span class="pos">dari<sub>prep</sub></span><span class="pos">kata<sub>n</sub></span><span class="pos">ini<sub>demd</sub></span><sup>S</sup></span><span class="pos"><span class="pos">dalam<sub>prep</sub></span><span class="pos">bahasa<sub>n</sub></span><span class="pos">Inggris<sub>n</sub></span><sup>Prep</sup></span></details></dt>
+  <dd lang="en">
+    <b>What does this word mean in English?</b>
+  </dd>
+</div>
+
+</dl>
+<h5 id="quiz">Quiz</h5>
+<div class="quiz card">
+  <div>
+    I have drunk water
+  </div>
+  <div>
+      Saya<input id="sudah-850243980" name="quiz-850243980" type="radio" autocomplete="off"/>
+        <span class="correct">sudah</span><input id="akan-850243980" name="quiz-850243980" type="radio" autocomplete="off"/>
+        <span >akan</span><input id="sedang-850243980" name="quiz-850243980" type="radio" autocomplete="off"/>
+        <span >sedang</span><input id="telah-850243980" name="quiz-850243980" type="radio" autocomplete="off"/>
+        <span class="correct">telah</span><span class="blank"></span>
+      minum
+      air</div>
+  <div>Sudah and telah both indicate the correct aspect but since the subject is Saya, which is formal, it would sound more natural to use telah</div>
+  <div><label class="button purple correct" for="sudah-850243980">sudah</label><label class="button purple " for="akan-850243980">akan</label><label class="button purple " for="sedang-850243980">sedang</label><label class="button purple correct" for="telah-850243980">telah</label></div>
+</div>
+</section>
+  <footer>
+    <nav><fieldset>
+          <span>Previous chapter:</span>
+          <a id="prev" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;04-verb-modification&#x2F;">« Conjugation: Tense &amp; Voice</a>
+        </fieldset></nav>
+  </footer>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

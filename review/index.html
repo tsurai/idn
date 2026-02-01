@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();
+await idn.review();
+}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main>
+<section id="card" class="vocab" data-mode="front">
+  <input id="vocab_id" type="hidden"/>
+  <div id="done">
+    <h3>All reviews are done for now.</h3>
+    <h4>Next reviews: <time id="review_time"></time></h4>
+  </div>
+  <dt><h3><dfn id="vocab" lang="id">&nbsp;</dfn></h3></dt>
+  <div id="back">
+    <dd lang="en">
+      <div id="pos"></div>
+      <div id="meaning"></div>
+      <span id="detail"></span>
+      <hr>
+      <div id="sentences"></div>
+    </dd>
+  </div>
+  <button class="purple" id="flip">Show answer</button>
+  <fieldset>
+    <button class="answer purple" value="0">Again</button>
+    <button class="answer purple" value="1">Hard</button>
+    <button class="answer purple" value="2">Good</button>
+    <button class="answer purple" value="3">Easy</button>
+  </fieldset>
+</section>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

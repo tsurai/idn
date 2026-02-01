@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+    <main>
+<article>
+  <header>
+    <h3>Lessons overview</h3>
+  </header>
+  <section>
+    
+      <li><a href="https://tsurai.github.io/idn/lessons/01-basic-sentence-structure/">Basic sentence structure &amp; context</a></li>
+    
+      <li><a href="https://tsurai.github.io/idn/lessons/02-pronouns/">Pronouns &amp; Demonstratives</a></li>
+    
+      <li><a href="https://tsurai.github.io/idn/lessons/03-greetings-and-farewells/">Greetings &amp; Farewells</a></li>
+    
+      <li><a href="https://tsurai.github.io/idn/lessons/04-verb-modification/">Conjugation: Tense &amp; Voice</a></li>
+    
+      <li><a href="https://tsurai.github.io/idn/lessons/05-asking-questions/">Asking Questions</a></li>
+    
+  </section>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

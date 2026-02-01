@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Conjugation: Tense &amp; Voice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();await idn.stats();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main><article>
+  <header>
+    <h3 class="fancy">Conjugation: Tense &amp; Voice</h3>
+    <time datetime="2025-09-23">Last updated on 2025-09-23</time>
+  </header>
+  <section><p>Strictly speaking, the title of this chapter is a lie. Unlike many languages, especially western languages, <em>Indonesian</em> does not actually use conjugations. Instead of using different verbs depending on the tense, i.e. <strong>eat</strong> turning into <strong>ate</strong> or <strong>eaten</strong>, <em>Indonesian</em> relies on <em>adverbs/particles</em> and <em>affixes</em> to supplement a verb with additional meaning.</p>
+<h4 id="tense-aspect">Tense / Aspect</h4>
+<p>Instead of <em>tense</em> to describe the point in time of an action <em>Indonesian</em> utilizes the grammatical concept of <em>aspect</em> to express the extension of a state or action in time. At a glance these two seem to be the same which is very confusing.</p>
+<h5 id="vocabulary">Vocabulary</h5>
+<dl class="card grid2">
+<div>
+  <dt>
+    <dfn lang="id">sedang</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>currently &#x2F; in process</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">sudah</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>already &#x2F; has &#x2F; have</b>
+    <em>(casual past aspect)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">telah</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>already &#x2F; has &#x2F; have</b>
+    <em>(formal past aspect)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">akan</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>will &#x2F; going to</b>
+    <em>(future)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">belum</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>not yet</b>
+    <em>(negative perfect)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">masih</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>still</b>
+    <em>(continuous)</em>
+  </dd>
+</div>
+
+</dl>
+<p>To illustrate the difference, let's have a look at <span lang="id" title="already &#x2F; has &#x2F; have">sudah</span>
+, the aspect for a <em>completed</em> action. The English phrases <strong>I ate lunch</strong> <em>(simple past)</em> and <strong>I have eaten lunch</strong> <em>(present perfect)</em> are distinct tenses but use the same <em>aspect</em> and thus, would both be expressed with <span lang="id" title="already &#x2F; has &#x2F; have">sudah</span>
+. As always there are nuances and in <em>Indonesian</em> context is king. In <span lang="id" title="I ate rice yesterday">Aku makan nasi kemarin</span>
+ which translates to <strong>I ate rice yesterday</strong>, <span lang="id" title="already &#x2F; have &#x2F; has">sudah</span>
+ is not needed because it is implied by <span lang="id" title="yesterday">kemarin</span>
+ / <strong>yesterday</strong>.</p>
+<h5 id="examples">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Aku sudah makan nasi</dfn><details>
+        <summary>personal pronoun + particle + verb + noun</summary><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">sudah<sub>par</sub></span><span class="pos">makan<sub>v</sub></span><span class="pos">nasi<sub>n</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>I ate rice</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Aku akan makan nasi</dfn><details>
+        <summary>personal pronoun + particle + verb + noun</summary><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">akan<sub>par</sub></span><span class="pos">makan<sub>v</sub></span><span class="pos">nasi<sub>n</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>I will eat rice</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Besok aku akan sudah makan nasi</dfn><details>
+        <summary>adverb + personal pronoun + particle + particle + verb + noun</summary><span class="pos">Besok<sub>adv</sub></span><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">akan<sub>par</sub></span><span class="pos">makan<sub>v</sub></span><span class="pos">nasi<sub>n</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>I will have eaten rice tomorrow</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Aku belum belajar</dfn><details>
+        <summary>personal pronoun + particle + verb</summary><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">belum<sub>par</sub></span><span class="pos">belajar<sub>v</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>I haven&#x27;t studied yet</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Aku masih belajar indonesia</dfn><details>
+        <summary>personal pronoun + particle + verb + noun</summary><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">masih<sub>par</sub></span><span class="pos">belajar<sub>v</sub></span><span class="pos">indonesia<sub>n</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>I&#x27;m still learning Indonesian</b>
+  </dd>
+</div>
+
+</dl>
+<h5 id="quiz">Quiz</h5>
+<div class="quiz card">
+  <div>
+    I have drunk water
+  </div>
+  <div>
+      Saya<input id="sudah-273685754" name="quiz-273685754" type="radio" autocomplete="off"/>
+        <span class="correct">sudah</span><input id="akan-273685754" name="quiz-273685754" type="radio" autocomplete="off"/>
+        <span >akan</span><input id="sedang-273685754" name="quiz-273685754" type="radio" autocomplete="off"/>
+        <span >sedang</span><input id="telah-273685754" name="quiz-273685754" type="radio" autocomplete="off"/>
+        <span class="correct">telah</span><span class="blank"></span>
+      minum
+      air</div>
+  <div>Sudah and telah both indicate the correct aspect but since the subject is Saya, which is formal, it would sound more natural to use telah</div>
+  <div><label class="button purple correct" for="sudah-273685754">sudah</label><label class="button purple " for="akan-273685754">akan</label><label class="button purple " for="sedang-273685754">sedang</label><label class="button purple correct" for="telah-273685754">telah</label></div>
+</div>
+<h4 id="voice">Voice</h4>
+<p>Another way to modify verbs is the usage of <em>affixes</em> (<em>prefixes</em>, <em>suffixes</em> and <em>circumfixes</em>) to indicate <em>voice</em> or <em>moods</em>. As easy and straightforward as other parts of <em>Indoneesian</em> grammar are, how to apply the affixes and their effects are complex and full of exceptions. Given the correct <em>affix</em> a verb can be made active, passive, habitual, accidental, and a lot more. For now we will only focus on a few of them that are frequently used.</p>
+<p>The <em>base</em> or <em>root form</em> of a word, <span lang="id" title="basic word">kata dasar</span>
+ in <em>Indonesian</em>, falls into one of two categories: <strong>Verb Roots</strong> and <strong>Non-Verb Root</strong>.</p>
+<p>The former are already usable verbs, but the later <em>Non-Verb Roots</em> <em>have</em> to be affixed to be used as a verb. Previous lessons already used words of both categories: <span lang="id" title="to eat">makan</span>
+ / <strong>to eat</strong> is a <em>Verb Root</em> while <span lang="id" title="to write">menulis</span>
+ is the affixed version of the <em>Non-Verb Root</em> <span lang="id" title="writing">tulis</span>
+. Nowadays the <em>prefix</em> to turn <em>Non-Verb Roots</em> into real <em>verbs</em> is often dropped in casual conversations. While this is largely accepted and natural, it is not grammatically correct.</p>
+<h5 id="agent-focus-me">Agent focus me-</h5>
+<p>The <em>agent focus</em> <strong>me-</strong> turns the <em>root word</em> into an <em>active transitive verb</em>, a verb with one or more <em>objects</em>. For example, <span lang="id" title="read">baca</span>
+ / <strong>read</strong> becomes <span lang="id" title="to read">membaca</span>
+ / <strong>to read</strong> according to the construction rules noted below.</p>
+<p>You might think that <strong>me-</strong> merely adds a <strong>to ___</strong> to a given root word but this is incorrect. Instead, it's more like applying the concept or essence of the root to something, which can lead to surprising results. Consider <span lang="id" title="law">Hukum</span>
+ the word for <strong>law</strong>. It wouldn't make a lot of sense to say <strong>to law</strong> so what would <em>doing the law to something/someone</em> be? In this case <span lang="id" title="to punish">menghukum</span>
+ means <strong>to punish</strong>.</p>
+<table>
+  <tr>
+    <th>Prefix</th>
+    <th>Initial Consonant</th>
+  </tr>
+  <tr>
+    <td>meng-</td>
+    <td>(vowel), g, h, k</td>
+  </tr>
+  <tr>
+    <td>mem-</td>
+    <td>b, p, f</td>
+  </tr>
+  <tr>
+    <td>men-</td>
+    <td>c, d, j, sy, t, z</td>
+  </tr>
+  <tr>
+    <td>me-</td>
+    <td>l, m, n, ny, ng, r, w, y</td>
+  </tr>
+  <tr>
+    <td>meny-</td>
+    <td>s</td>
+  </tr>
+  <tr>
+    <td>menge-</td>
+    <td><em>all else</em></td>
+  </tr>
+</table>
+<h5 id="examples-1">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Dia menulis surat</dfn><details>
+        <summary>personal pronoun + verb (me- + tulis) + noun</summary><span class="pos">Dia<sub>perp</sub><sup>S</sup></span><span class="pos">menulis<sub>v</sub></span><span class="pos">surat<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>She writes a letter</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Aku membaca buku</dfn><details>
+        <summary>personal pronoun + verb (me- + baca) + noun</summary><span class="pos">Aku<sub>perp</sub><sup>S</sup></span><span class="pos">membaca<sub>v</sub></span><span class="pos">buku<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>I read a book</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Saya makan apel</dfn><details>
+        <summary>personal pronoun + verb + noun</summary><span class="pos">Saya<sub>perp</sub><sup>S</sup></span><span class="pos">makan<sub>v</sub></span><span class="pos">apel<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>I eat an apple</b>
+    <em>(makan is Verb Root word and doesn&#x27;t need me-)</em>
+  </dd>
+</div>
+
+</dl>
+<h5 id="patient-focus">Patient focus</h5>
+<p>The functional role of the <em>passive</em> in <em>English</em> and <em>Indonesian</em> differ significantly. In <em>English</em> the <em>passive</em> is used less frequently, often employed for rhetorical effect. But in <em>Indonesian</em> the <em>passive</em> is a lot more common and natural in every day conversations. Furthermore, it is used in the context of politeness, like conveying requests or commands while maintaining social norms.</p>
+<p>From a linguistic point of view there are a lot of other, deeply rooted differences between <em>English</em> and <em>Indonesian</em>. One uses an <em>asymmetrical voice</em> system, the other, being a part of the <em>Austronesian</em> language family, a <em>symmetrical voice</em> system. That's why, for example, linguists prefer the term <em>patient focus</em> over <em>passive voice</em> for <em>Indonesian</em>. That being said it is still an ongoing debate and even in <em>Indonesian</em> textbooks you will see the terms <em>active</em> and <em>passive</em> due to western colonization infuence. That being said, in my opinion it doesn't really matter which term you use as an beginner or intermediate learner, the knowledge that these different terms exist is enough for the moment.</p>
+<details>
+  <summary>Nerd details</summary>
+<p>In <em>English</em> the <em>active</em> is the default and the <em>passive</em> is <em>derived</em> from it. Grammatically the <em>English active</em> has a higher status and is used way more frequently; their usage is <em>asymmetrical</em>. When constructing the <em>passive</em> in <em>English</em> the <em>patient</em> or <em>undergoer</em> gets <em>promoted</em> to the <em>subject</em> and the <em>actor</em> gets <em>demoted</em> to an <em>optional prepositional</em>. In stark contrast, the <em>Indonesian passive</em> isn't just a derived form, but a mutual to the <em>active</em>. It's construction doesn't <em>promote</em> or <em>demote</em>, the <em>patient</em> and <em>actor</em> are both equal in status; they are in <em>symmetrical</em> relationship.</p>
+</details>
+<h5 id="type-1-di-passive">Type 1 di- passive</h5>
+<p>The <em>Type 1 patient focus</em> <strong>di-</strong> turns the <em>root word</em> into a <em>passive verb</em> and shifts the focus from the actor to the undergoer. Given the <em>active sentence</em> <span lang="id" title="Michi eats an apple">Michi makan apel</span>
+ / <strong>Michi eats an apple</strong>, the <em>passive</em> <span lang="id" title="The apple was eaten by Michi">Apel itu dimakan Michi</span>
+ / <strong>The apple was eaten by Michi</strong>, transforms the <em>Subject</em> of the <em>active</em> into the <em>Object</em> of the <em>passive</em> sentence and vice versa.</p>
+<p>Unlike the <em>active focus</em> <strong>me-</strong>, there are no complicated construction rules for the <em>passive focus</em> <strong>di-</strong>, instead it is simply added to the <em>root word</em> without any further modifications.</p>
+<ol>
+<li><em>Undergoer (Subject) + di-Verb</em></li>
+<li><em>Undergoer (Subject) + di-Verb + Actor (Object)</em></li>
+<li><em>Undergoer (Subject) + di-Verb + ? + oleh + Actor (Object)</em></li>
+</ol>
+<p>Depending on the content, different forms can be used to construct a <em>passive</em> sentence. The basic form consists of the <em>subject</em> and the di- prefixed <em>verb</em> followed directly by the <em>actor</em>, which when unknown or obvious by the context, can even be omitted as well.</p>
+<p>But if the <em>verb</em> and <em>actor</em> are separated by another phrase, the word <span lang="id" title="by">oleh</span>
+ / <strong>by</strong> has to be added before the <em>actor</em> to mark it as such. <strong>By</strong> in this context specifically only refers to the <em>actor</em> and can be thought of as <strong>because of</strong>. Don't confuse it with <strong>by means of</strong> as in <strong>by train</strong>, because that is a completely different word, <span lang="id" title="by means of &#x2F; with">dengan</span>
+.</p>
+<h5 id="type-2-short-passive">Type 2 short passive</h5>
+<p>This type of <em>passive</em> is often used in casual conversations, but requires the <em>actor</em> to be a 1st or 2nd person <em>pronoun</em>. Rather than modifying the <em>verb</em> itself, the position of the <em>pronoun</em> relative to the <em>verb</em> changes to indicate the <em>passive</em>. It is placed either directly proceeding the <em>verb</em> or added in its <em>possessive pronoun</em> suffix form. The <em>type 2 passive</em> cannot be combined with <span lang="id" title="by">oleh</span>
+ / <strong>by</strong> as the <em>actor</em>, in this case the <em>pronoun</em> has to stay directly proceeding the <em>verb</em>.</p>
+<ol>
+<li><em>Undergoer (Subject) + 1st or 2nd Person Pronoun (Object) + Verb</em></li>
+<li><em>Undergoer (Subject) + verb-ku,-mu,-nya</em></li>
+</ol>
+<h5 id="examples-2">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Tikus dikejar kucing</dfn><details>
+        <summary>noun + verb + noun</summary><span class="pos">Tikus<sub>n</sub><sup>S</sup></span><span class="pos"><span class="pos">dikejar<sub>pasv</sub></span><span class="pos">kucing<sub>n</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>The rat is chased by a cat</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Dia aku pukul</dfn><details>
+        <summary>personal pronoun + personal pronoun + verb</summary><span class="pos">Dia<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">aku<sub>perp</sub><sup>O</sup></span><span class="pos">pukul<sub>v</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>She &#x2F; He was hit by me</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Dia pukulku</dfn><details>
+        <summary>personal pronoun + verb + possessive pronoun suffix</summary><span class="pos">Dia<sub>perp</sub><sup>S</sup></span><span class="pos"><span class="pos">pukul<sub>verb</sub></span><span class="pos">-ku<sub>posp</sub><sup>O</sup></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>He &#x2F; She was hit by me</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Buku yang aku pinjam udah aku balikin kemarin</dfn><details>
+        <summary>noun + subordinator + personal pronoun + verb + adverb + personal pronoun + verb + adverb</summary><span class="pos"><span class="pos">Buku<sub>n</sub></span><span class="pos">yang<sub>sub</sub></span><span class="pos">aku<sub>perp</sub></span><span class="pos">pinjam<sub>v</sub></span><sup>S</sup></span><span class="pos"><span class="pos">udah<sub>adv</sub></span><span class="pos">aku<sub>perp</sub></span><span class="pos">balikin<sub>v</sub></span><span class="pos">kemarin<sub>adv</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>The book I borrowed was already returned by me yesterday</b>
+  </dd>
+</div>
+
+</dl>
+</section>
+  <footer>
+    <nav><fieldset>
+          <span>Previous chapter:</span>
+          <a id="prev" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;03-greetings-and-farewells&#x2F;">« Greetings &amp; Farewells</a>
+        </fieldset>
+        <fieldset>
+          <span>Next chapter:</span>
+          <a id="next" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;05-asking-questions&#x2F;">Asking Questions »</a>
+        </fieldset></nav>
+  </footer>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

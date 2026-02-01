@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Pronouns &amp; Demonstratives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();await idn.stats();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main><article>
+  <header>
+    <h3 class="fancy">Pronouns &amp; Demonstratives</h3>
+    <time datetime="2025-10-23">Last updated on 2025-10-23</time>
+  </header>
+  <section><p>Pronouns in <em>Indonesian</em> are gender-neutral but feature distinct words depending on the formality. In every day conversations the casual forms are, depending on the place, usually accepted, but their formal counterparts should still be used in professional situations or with the elders, for example.</p>
+<h4 id="first-person">First Person</h4>
+<p>As seen in the previous lesson <span lang="id" title="I">saya</span>
+ means <strong>I</strong>, more specifically it is the <em>formal</em> word for I, its <em>casual</em> counterpart is <span lang="id" title="I">aku</span>
+. An even more informal variant is <span lang="id" title="I">gw</span>
+, slang you might come across on the internet.</p>
+<p>You should stay away from slang as someone new to a language, especially when you cannot read the room. As a rule of thumb, you cannot go wrong with starting with the <em>formal</em> forms and easing into the more <em>casual</em> forms if offered by your conversation partner.</p>
+<p>Unlike <em>I</em> the words for <em>We</em> are not split by <em>formality</em> but by <em>clusivity</em>. The following examples showcase the usage of <span lang="id" title="we">kami</span>
+ and <span lang="id" title="we">kita</span>
+.</p>
+<h5 id="vocabulary">Vocabulary</h5>
+<dl class="card grid4">
+<div>
+  <dt>
+    <dfn lang="id">saya</dfn><span>pronon</span></dt>
+  <dd lang="en">
+    <b>I</b>
+    <em>(formal)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">aku</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>I</b>
+    <em>(casual)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">gw</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>I</b>
+    <em>(slang)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kami</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>We</b>
+    <em>(exclusive)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kita</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>We</b>
+    <em>(inclusive)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">sempai</dfn><span>verb</span></dt>
+  <dd lang="en">
+    <b>to arrive</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kan</dfn><span>particle</span></dt>
+  <dd lang="en">
+    <b>right? &#x2F; isn&#x27;t it?</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">teman</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>friend</b>
+  </dd>
+</div>
+
+</dl>
+<h5 id="examples">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Kami sempai besok</dfn><span>personal pronoun + verb + adverb</span></dt>
+  <dd lang="en">
+    <b>We will arrive tomorrow</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kita teman, kan?</dfn><span>personal pronoun + noun + particle</span></dt>
+  <dd lang="en">
+    <b>We are friends, right?</b>
+  </dd>
+</div>
+
+</dl>
+<p><span lang="id" title="we">Kami</span>
+ <em>excludes</em> the person being talked to. In the sentence <span lang="id" title="We will arrive tomorrow">Kami akan tiba besok</span>
+ you are informing someone, who is not with you, that your group will arrive tomorrow. <span lang="id" title="we">Kita</span>
+ on the other hand, <em>includes</em> the person you are talking with, as shown in <span lang="id" title="We are friends, right?">Kita teman, kan?</span>
+ which seeks confirmation from the other person.</p>
+<p>As discussed previously, <em>Indonesian</em> heavily relies on context and often omits words; both examples follow this sentiment. <span lang="id" title="We will arrive tomorrow">Kami sempai besok</span>
+ leaves out <span lang="id" title="will">akan</span>
+, the word for <strong>will</strong> and in the case of <span lang="id" title="">Kita teman, kan</span>
+ the <em>verb</em> <strong>to be / are</strong>, which is <span lang="id" title="to be">adalah</span>
+. Depending on your choice of pronoun, or rather how formal they are, you might want to use "proper" complete sentences instead.</p>
+<h4 id="second-person">Second person</h4>
+<dl class="card grid4">
+<div>
+  <dt>
+    <dfn lang="id">anda</dfn><span>pronon</span></dt>
+  <dd lang="en">
+    <b>you</b>
+    <em>(formal)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kamu</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>you</b>
+    <em>(casual)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">lu</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>you</b>
+    <em>(slang)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kalian</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>you all</b>
+    <em>(plural)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">tahu</dfn><span>verb</span></dt>
+  <dd lang="en">
+    <b>to know</b>
+  </dd>
+</div>
+
+</dl>
+<h5 id="examples-1">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Kamu tahu Michi?</dfn><span>personal pronoun + verb + proper noun</span></dt>
+  <dd lang="en">
+    <b>Do you know Michi?</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kalian sedang apa?</dfn><span>personal pronoun + adverb + interrogative pronoun</span></dt>
+  <dd lang="en">
+    <b>What are you all doing?</b>
+  </dd>
+</div>
+
+</dl>
+<p>Just like first person pronouns, the second person is split into a <em>formal</em> and <em>casual</em> form, <span lang="id" title="You">Anda</span>
+ and <span lang="id" title="You">Kamu</span>
+ respectively. Unlike <em>English</em>, <em>Indonesian</em> has a separate word for the plural of <em>You</em> or <em>You all</em>: <span lang="id" title="You (plural)">Kalian</span>
+. It has a <em>casual</em> tone and can be used in everyday conversations. There are more polite alternatives, but they are only rarely used and ignored at this point.</p>
+<h4 id="third-person">Third person</h4>
+<dl class="card grid2">
+<div>
+  <dt>
+    <dfn lang="id">Ia</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>He &#x2F; She</b>
+    <em>(formal, gender-neutral)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Dia</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>He &#x2F; She</b>
+    <em>(casual, gender-neutral)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Beliau</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>He &#x2F; She</b>
+    <em>(very formal, gender-neutral)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Mereka</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>They</b>
+    <em>(plural, gender-neutral)</em>
+  </dd>
+</div>
+
+</dl>
+<p>By now the pattern should be clear; once again there is the <em>formal</em> <span lang="id" title="He&#x2F;She">Ia</span>
+ and <em>casual</em> <span lang="id" title="He&#x2F;She">Dia</span>
+, but this time there is an even more <em>formal</em> version, <span lang="id" title="He&#x2F;She">Beliau</span>
+. The latter is reserved to address someone <em>highly respected</em>. Using it in a casual context might accidentally sound arrogant or mocking instead. Finally, there is the plural third person <span lang="id" title="They">Mereka</span>
+ meaning <strong>They</strong>.</p>
+<p>You might have noticed that all these pronouns are <em>gender-neutral</em>. The same is true for most nouns, adjectives, and verbs. It is possible to specify the gender of a noun if needed, but by default they are assumed to be <em>gender-neutral</em>.</p>
+<h5 id="quiz">Quiz</h5>
+<p><div class="quiz card">
+  <div>
+    I like cats
+  </div>
+  <div><input id="Kita-428371315" name="quiz-428371315" type="radio" autocomplete="off"/>
+        <span >Kita</span><input id="Aku-428371315" name="quiz-428371315" type="radio" autocomplete="off"/>
+        <span class="correct">Aku</span><input id="Dia-428371315" name="quiz-428371315" type="radio" autocomplete="off"/>
+        <span >Dia</span><input id="Saya-428371315" name="quiz-428371315" type="radio" autocomplete="off"/>
+        <span class="correct">Saya</span><span class="blank"></span>
+      suka
+      kucing</div>
+  <div></div>
+  <div><label class="button purple " for="Kita-428371315">Kita</label><label class="button purple correct" for="Aku-428371315">Aku</label><label class="button purple " for="Dia-428371315">Dia</label><label class="button purple correct" for="Saya-428371315">Saya</label></div>
+</div>
+
+<div class="quiz card">
+  <div>
+    Where are you all?
+  </div>
+  <div><input id="Saya-938732025" name="quiz-938732025" type="radio" autocomplete="off"/>
+        <span >Saya</span><input id="Ia-938732025" name="quiz-938732025" type="radio" autocomplete="off"/>
+        <span >Ia</span><input id="Kalian-938732025" name="quiz-938732025" type="radio" autocomplete="off"/>
+        <span class="correct">Kalian</span><input id="Kamu-938732025" name="quiz-938732025" type="radio" autocomplete="off"/>
+        <span >Kamu</span><span class="blank"></span>
+      di
+      mana?</div>
+  <div></div>
+  <div><label class="button purple " for="Saya-938732025">Saya</label><label class="button purple " for="Ia-938732025">Ia</label><label class="button purple correct" for="Kalian-938732025">Kalian</label><label class="button purple " for="Kamu-938732025">Kamu</label></div>
+</div>
+
+<div class="quiz card">
+  <div>
+    His&#x2F;Her cat is black
+  </div>
+  <div>
+      Kucing<input id="ia-408636448" name="quiz-408636448" type="radio" autocomplete="off"/>
+        <span class="correct">ia</span><input id="dia-408636448" name="quiz-408636448" type="radio" autocomplete="off"/>
+        <span class="correct">dia</span><input id="gw-408636448" name="quiz-408636448" type="radio" autocomplete="off"/>
+        <span >gw</span><input id="kita-408636448" name="quiz-408636448" type="radio" autocomplete="off"/>
+        <span >kita</span><span class="blank"></span>
+      hitam</div>
+  <div></div>
+  <div><label class="button purple correct" for="ia-408636448">ia</label><label class="button purple correct" for="dia-408636448">dia</label><label class="button purple " for="gw-408636448">gw</label><label class="button purple " for="kita-408636448">kita</label></div>
+</div>
+</p>
+<h4 id="possessive">Possessive</h4>
+<p>As the name implies <em>possessive pronouns</em> indicate the possession of something. In English every <em>personal pronoun</em> has its own corresponding <em>possessive pronoun</em>: <strong>I</strong> -&gt; <strong>My</strong>, <strong>You</strong> -&gt; <strong>Yours</strong>, <strong>She</strong> -&gt; <strong>Hers</strong> and so on. However, <em>Indonesian</em> uses different systems to express the same idea. Instead of using special <em>pronouns</em> the <em>noun</em> itself is modified, either directly or by appending a <em>personal pronoun</em> or by using a <em>suffix</em>.</p>
+<p>To say <strong>My cat</strong> is as easy as adding one of the <em>first person pronoun</em>, <span lang="id" title="I">Saya</span>
+ / <span lang="id" title="I">Aku</span>
+ etc, after the noun for <strong>cat</strong>, creating <span lang="id" title="My cat">Kucing saya</span>
+ / <strong>My cat</strong>. This works for all other <em>personal pronouns</em> as well, regardless of the <em>person</em> used like <span lang="id" title="Their car">Mobil mereka</span>
+ / <strong>Their car</strong>. This can also be expanded to whole <em>noun phrases</em> like <span lang="id" title="Their red car">Mobil merah mereka</span>
+ / <strong>Their red car</strong>.</p>
+<p>Naturally it wouldn't be <em>Indonesian</em> if there wasn't a shorter version as well. Instead of adding the whole pronoun after the noun we modify it directly with a corresponding <em>suffix</em>:</p>
+<table>
+  <tr>
+    <th>Suffix</th>
+    <th>Pronoun</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>-ku</td>
+    <td><span lang="id" title="I">Aku</span>
+</td>
+    <td>My</td>
+  </tr>
+  <tr>
+    <td>-mu</td>
+    <td><span lang="id" title="You">Kamu</span>
+</td>
+    <td>Your</td>
+  </tr>
+  <tr>
+    <td>-nya</td>
+    <td><span lang="id" title="He&#x2F;She">Ia</span>
+</td>
+    <td>His / Hers</td>
+  </tr>
+</table>
+<h5 id="examples-2">Examples</h5>
+<dl class="examples card">
+<div>
+  <dt>
+    <dfn lang="id">Kucing saya</dfn><span>noun + possessive pronoun</span></dt>
+  <dd lang="en">
+    <b>My cat</b>
+    <em>(noun phrase)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kucingmu hitam</dfn><details>
+        <summary>noun + pronoun suffix + adjective</summary><span class="pos"><span class="pos">Kucing<sub>n</sub></span><span class="pos">-mu<sub>posp</sub></span><sup>S</sup></span><span class="pos">hitam<sub>adj</sub><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>Your cat is black</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kucing hitammu</dfn><details>
+        <summary>noun+ adjective + pronoun suffix</summary><span class="pos"><span class="pos">Kucing<sub>n</sub></span><span class="pos">hitam<sub>adj</sub></span><span class="pos">-mu<sub>posp</sub></span><sup>S</sup></span></details></dt>
+  <dd lang="en">
+    <b>Your black cat</b>
+    <em>(noun phrase)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kucingnya juga punyaku</dfn><details>
+        <summary>noun + pronoun suffix + adverb + verb + pronoun suffix</summary><span class="pos"><span class="pos">Kucing<sub>n</sub></span><span class="pos">-nya<sub>posp</sub></span><sup>S</sup></span><span class="pos"><span class="pos">juga<sub>adverb</sub></span><span class="pos">punya<sub>verb</sub></span><span class="pos">-ku<sub>posp</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>His cat is also mine</b>
+  </dd>
+</div>
+
+</dl>
+<p>The first two sentences are pretty straightforward and show the basic usage of both the explicit <em>pronoun</em> and <em>suffix</em> version. Moving on to the third example, <span lang="id" title="Your black cat">Kucing hitammu</span>
+ / <strong>Your black cat</strong> uses a slight variation. Instead of modifying the <em>noun</em> <span lang="id" title="cat">kucing</span>
+, the whole <em>noun phrase</em> is changed by adding the <em>suffix</em> <span lang="id" title="your">-mu</span>
+ to the final adjective <span lang="id" title="black">hitam</span>
+ / <strong>black</strong>. This variation is often used in casual speech for short phrases.</p>
+<p>It is crucial to consider the position of the <em>possessive</em> within a given sentence. The <em>possessive</em> modifies a <em>noun phrase</em> and returns a new <em>noun phrase</em>. On its own, it does not form a <em>complete sentence</em>.</p>
+<p>Example one and two show the difference. Both use the same words but in a slightly different order. When you break down <span lang="id" title="Your cat is black">Kucingmu hitam</span>
+, you will see that <span lang="id" title="your">-mu</span>
+ only modifies <span lang="id" title="cat">kucing</span>
+ to form the new <em>noun phrase</em> <strong>Your cat</strong>. This <em>noun phrase</em> now acts as the <em>subject</em> for the <em>adjective</em> <span lang="id" title="black">hitam</span>
+ which acts as the <em>predicate</em>. The final result is a proper <em>subject + predicate</em> structure. <span lang="id" title="Your black cat">Kucing hitammu</span>
+ on the other hand, pulls <span lang="id" title="black">hitam</span>
+ into the <em>noun phrase</em> itself which removes the <em>predicate</em>, leaving us with just the <em>noun phrase</em> describing something. This is reflected in their respective translations: <strong>Your cat is black</strong> and just <strong>Your black cat</strong>.</p>
+<p>Finally, <span lang="id" title="His cat is also mine">Kucingnya juga punyaku</span>
+ is a bit more complex. The verb <span lang="id" title="to have">punya</span>
+ means <strong>to have</strong>, which when modified with a <em>possessive pronoun suffix</em> turns into a general possessive to express things like <span lang="id" title="This is mine">Ini punyaku</span>
+ / <strong>This is mine</strong>. Although a bit tricky, this is a <em>complete sentence</em>. It uses two <em>possessives</em> that both create independent <em>noun phrases</em>, with <span lang="id" title="Her&#x2F;His cat">Kucingnya</span>
+ acting as the <em>subject</em> and <span lang="id" title="also mine">juga punyaku</span>
+ as the <em>predicate</em>.</p>
+<h4 id="demonstratives">Demonstratives</h4>
+<dl class="card grid3">
+<div>
+  <dt>
+    <dfn lang="id">ini</dfn><span>demonstrative</span></dt>
+  <dd lang="en">
+    <b>this &#x2F; these</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">itu</dfn><span>demonstrative</span></dt>
+  <dd lang="en">
+    <b>that &#x2F; those</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">adalah</dfn><span>verb</span></dt>
+  <dd lang="en">
+    <b>to be &#x2F; is &#x2F; are</b>
+  </dd>
+</div>
+
+</dl>
+<p>Finally, we cover the two <em>demonstratives</em> <span lang="id" title="this &#x2F; these">ini</span>
+ / <strong>this</strong> and <span lang="id" title="that">itu</span>
+ / <strong>that</strong>. They can either stand in front as a <em>demonstrative pronoun</em> or following a <em>noun</em> or <em>noun phrase</em> as a <em>demonstrative determiner</em>. Lets look at a simple example.</p>
+<p>In the sentence <span lang="id" title="This is a cute black cat">Ini kucing hitam lucu</span>
+, <span lang="id" title="this">ini</span>
+ is a <em>demonstrative pronoun</em> as signaled by its position in the front. This shifts the focus of the sentence and turns <span lang="id" title="this">ini</span>
+ / <strong>this</strong> into the <em>subject</em>, resulting in the translation <strong>This is a cute black cat</strong>.</p>
+<p><span lang="id" title="This black cat is cute">Kucing hitam ini lucu</span>
+ utilizes <span lang="id" title="this">ini</span>
+ as a <em>demonstrative determiner</em> which transforms the whole phrase <strong>This black cat</strong> into a complete <em>noun phrase</em> and the <em>subject</em>. In this case it leads to a subtle shift in emphasis and meaning to <strong>This black cat is cute</strong>.</p>
+<p>Take note how the position of <span lang="id" title="this">ini</span>
+ or <span lang="id" title="that">itu</span>
+ within a sentence influences the <em>noun phrase</em> being modified. In this case, <strong>This is a [cute black cat]</strong> vs <strong>[This black cat] is cute</strong>. This has further grammatical implications depending on the context this form is used in. While <span lang="id" title="This is my black cat">Ini kucing hitam saya</span>
+ / <strong>This is my black cat</strong> is a grammatically correct sentence, <span lang="id" title="">Kucing hitam ini saya</span>
+ is wrong and makes no sense.</p>
+<p>The reason for this is that both <span lang="id" title="this">ini</span>
+ and <span lang="id" title="I">saya</span>
+ compete as a <em>modifier</em> for the <em>noun phrase</em> <span lang="id" title="">kucing hitam</span>
+. But in <em>Indonesian</em> the <em>demonstrative determiner</em>, meaning <span lang="id" title="this">ini</span>
+ or <span lang="id" title="that">itu</span>
+ at the end of a <em>noun phrase</em>, structurally <em>completes</em> it. The <em>noun phrase</em> cannot be further modified afterward and thus <span lang="id" title="I">saya</span>
+ can no longer function as a <em>possessive pronoun</em>. Additional meaning can still be added with a predicate forming a new, separate <em>phrase</em> like for example, <span lang="id" title="This black cat is big and cute">Kucing hitam ini besar dan luca</span>
+ / <strong>[This black cat] is [big and cute]</strong>.</p>
+<h5 id="examples-3">Examples</h5>
+<dl class="card">
+<div>
+  <dt>
+    <dfn lang="id">Kucing hitam saya ini lucu</dfn><details>
+        <summary>noun + adjective + pronoun + demonstrative determiner + adjective</summary><span class="pos"><span class="pos">Kucing<sub>n</sub></span><span class="pos">hitam<sub>adj</sub></span><span class="pos">saya<sub>posp</sub></span><span class="pos">ini<sub>demd</sub></span><sup>S</sup></span><span class="pos">lucu<sub>adj</sub><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>This black cat of mine is cute</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Itu kucing-kucing putih aku</dfn><details>
+        <summary>demonstrative pronoun + noun + adjective + possessive pronoun</summary><span class="pos">Itu<sub>demp</sub><sup>S</sup></span><span class="pos"><span class="pos">kucing-kucing<sub>n</sub></span><span class="pos">putih<sub>adj</sub></span><span class="pos">aku<sub>posp</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>Those are my white cats</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Kucing ini milik dia</dfn><details>
+        <summary>noun + demonstrative determiner + verb + pronun</summary><span class="pos"><span class="pos">Kucing<sub>n</sub></span><span class="pos">init<sub>demd</sub></span><sup>S</sup></span><span class="pos">milik<sub>v</sub></span><span class="pos">dia<sub>perp</sub><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>This cat belongs to him&#x2F;her</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Ini adalah buku saya</dfn><details>
+        <summary>demonstrative pronoun + verb + noun + possessive pronoun</summary><span class="pos">Ini<sub>demp</sub><sup>S</sup></span><span class="pos">adalah<sub>v</sub></span><span class="pos"><span class="pos">buku<sub>n</sub></span><span class="pos">saya<sub>posp</sub></span><sup>P</sup></span></details></dt>
+  <dd lang="en">
+    <b>This is my book</b>
+    <em>(formal &amp; explicit)</em>
+  </dd>
+</div>
+
+</dl>
+</section>
+  <footer>
+    <nav><fieldset>
+          <span>Previous chapter:</span>
+          <a id="prev" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;01-basic-sentence-structure&#x2F;">« Basic sentence structure &amp; context</a>
+        </fieldset>
+        <fieldset>
+          <span>Next chapter:</span>
+          <a id="next" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;03-greetings-and-farewells&#x2F;">Greetings &amp; Farewells »</a>
+        </fieldset></nav>
+  </footer>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

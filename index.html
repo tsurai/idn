@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();
+await idn.stats();
+}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+    <main>
+<nav>
+  <section class="card status">
+    <h4>Learn</h4>
+    <p>
+      <span id="num_vocabs" class="num"></span> new words left to learn today
+    </p>
+    <p>
+      No new words left to learn
+    </p>
+
+    <a href="/idn/learn/"><button></button></a>
+  </section>
+  <section class="card status">
+    <h4>Review</h4>
+    <p>
+      <span id="num_reviews" class="num"></span> reviews are waiting
+    </p>
+    <p>
+      <span>Next reviews <time id="review_time"></time></span>
+      <span>Learn a new words to start reviews</span>
+    </p>
+    <a href="/idn/review/"><button></button></a>
+  </section>
+</nav>
+<section>
+  <h3>About</h3>
+  <p>I'm a big fan of the <em>protege effect</em> or <em>learning by teaching</em>. Trying or even just pretending to teach others is a test of your own understanding and reveals knowledge gaps. This website is the still evolving result of my <em>Indonesian</em> studies. While I'm doing my best to research and verify the information presented here, I am neither a native, nor do I have the cultural background to pick up on all nuances. Corrections are always welcomed and very appreciated.<br>
+  Feel free to use the email adress listed on my <a href="https://github.com/tsurai/">github profile</a> or <a href="https://github.com/tsurai/idn/issues">open an issue</a> directly.<br>
+  There are no accounts, no data being tracked or sold, everything is local to your browser.</p>
+</section>
+<section>
+  <h3>Lessons</h3>
+  
+  
+    <article>
+      <header>
+        <h4>01&nbsp;<a class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;01-basic-sentence-structure&#x2F;">Basic sentence structure &amp; context</a></h4>
+      </header>
+      <summary>
+        <p>The first introduction to <em>Indonesian</em>. Learn about <em>SVO</em>, the basic sentence structure, how to construct basic statements, as well as some interesting quirks that make <em>Indonesian</em> special.</p>
+
+      </summary>
+    </article>
+  
+    <article>
+      <header>
+        <h4>02&nbsp;<a class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;02-pronouns&#x2F;">Pronouns &amp; Demonstratives</a></h4>
+      </header>
+      <summary>
+        <p>Learn to refer to yourself and others, the subtleties of formality and dive deeper into the essence of <em>Indonesian</em> and how to say more with less.</p>
+
+      </summary>
+    </article>
+  
+    <article>
+      <header>
+        <h4>03&nbsp;<a class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;03-greetings-and-farewells&#x2F;">Greetings &amp; Farewells</a></h4>
+      </header>
+      <summary>
+        <p>To have a conversation you first need to learn how to start one. Let's learn about basic some basic greetings, farewells and other phrases.</p>
+
+      </summary>
+    </article>
+  
+    <article>
+      <header>
+        <h4>04&nbsp;<a class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;04-verb-modification&#x2F;">Conjugation: Tense &amp; Voice</a></h4>
+      </header>
+      <summary>
+        <p>Strictly speaking, <em>Indonesian</em> does not have verb conjugation and uses modifications made with various affixes and adverbs instead. This chapter introduces these concepts and how to modify the tense of a verb or clause.</p>
+
+      </summary>
+    </article>
+  
+    <article>
+      <header>
+        <h4>05&nbsp;<a class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;05-asking-questions&#x2F;">Asking Questions</a></h4>
+      </header>
+      <summary>
+        <p>The groundwork of communication is the ability to ask questions. For this we have to learn the <em>Indonesian</em> counterparts of the called <em>wh</em> queston words: what, who, why and so on.</p>
+
+      </summary>
+    </article>
+  
+</section>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

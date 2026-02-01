@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Learn new words</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();
+await idn.learn();
+}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main>
+<section class="vocab">
+  <div id="done">
+    <h3>No more vocabs to learn</h3>
+    <br>
+    <a href="/"><button class="purple">« back</button></a>
+  </div>
+  <div id="front">
+    <input type="hidden" id="vocab_id" />
+    <dt><h3><dfn id="vocab" lang="id"></dfn></h3></dt>
+    <dd lang="en">
+      <div id="pos"></div>
+      <div id="meaning"></div>
+      <span id="detail"></span>
+      <hr>
+      <p id="sentences"></p>
+    </dd>
+  </div>
+  <button class="purple" id="next">» next</button>
+</section>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

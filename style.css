@@ -1,0 +1,694 @@
+/*
+ * global styles
+ */
+:root {
+    --white: oklch(96% 0.003 264);
+    --white-off: oklch(77.04% 0.002 197.12);
+    --black: oklch(25.11% 0.006 258.36);
+    --black-off: oklch(43.87% 0.005 271.3);
+    --neutral-light: oklch(93% 0.003 264);
+    --neutral-dark: oklch(30% 0.003 264);
+    --purple-light: oklch(43% 0.1807 298.49);
+    --purple-dark: oklch(65% 0.1807 298.49);
+    --pink-light: oklch(45% 0.1807 331.69);
+    --pink-dark: oklch(65% 0.1807 331.69);
+    --green-light: oklch(42.77% 0.1807 149.29);
+    --green-dark: oklch(65% 0.1807 149.29);
+    --red-light: oklch(42.77% 0.1807 27.24);
+    --red-dark: oklch(65% 0.1807 27.24);
+    --shadow:
+        color-mix(in oklch, var(--purple) 30%, transparent 70%) 5px 5px,
+        color-mix(in oklch, var(--purple) 20%, transparent 80%) 10px 10px,
+        color-mix(in oklch, var(--purple) 10%, transparent 90%) 15px 15px;
+    --shadow2:
+        color-mix(in oklch, var(--pink) 30%, transparent 70%) 5px 5px,
+        color-mix(in oklch, var(--pink) 20%, transparent 80%) 10px 10px,
+        color-mix(in oklch, var(--pink) 10%, transparent 90%) 15px 15px;
+    --fancy: linear-gradient(45deg, var(--purple), 50%, var(--pink));
+    --font: Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --fg: var(--black);
+        --bg: var(--white);
+        --fg-off: var(--black-off);
+        --bg-off: var(--white-off);
+        --neutral: var(--neutral-light);
+        --purple: var(--purple-light);
+        --pink: var(--pink-light);
+        --green: var(--green-light);
+        --red: var(--red-light);
+    }
+
+    :root:has(#theme_toggle:checked) {
+        --fg: var(--white);
+        --bg: var(--black);
+        --fg-off: var(--white-off);
+        --bg-off: var(--black-off);
+        --neutral: var(--neutral-dark);
+        --purple: var(--purple-dark);
+        --pink: var(--pink-dark);
+        --green: var(--green-dark);
+        --red: var(--red-dark);
+    }
+}
+
+/* dark mode specific */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fg: var(--white);
+        --bg: var(--black);
+        --fg-off: var(--white-off);
+        --bg-off: var(--black-off);
+        --neutral: var(--neutral-dark);
+        --purple: var(--purple-dark);
+        --pink: var(--pink-dark);
+        --green: var(--green-dark);
+        --red: var(--red-dark);
+    }
+
+    :root:has(#theme_toggle:checked) {
+        --fg: var(--black);
+        --bg: var(--white);
+        --fg-off: var(--black-off);
+        --bg-off: var(--white-off);
+        --neutral: var(--neutral-light);
+        --purple: var(--purple-light);
+        --pink: var(--pink-light);
+        --green: var(--green-light);
+        --red: var(--red-light);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    border: 0px;
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    min-height: 100%;
+}
+
+main {
+    flex-grow: 1;
+    max-width: min(90ch, 100% - 2rem);
+    margin-inline: auto;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.625;
+    margin: 1lh 0;
+}
+
+ol {
+    line-height: 1.625;
+}
+
+a, a:visited, a:hover  {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+strong {
+    color: var(--pink);
+}
+
+h1 {
+    font-size: 2.986rem;
+}
+
+h2 {
+    font-size: 2.488rem;
+}
+
+h3 {
+    font-size: 2.074rem;
+}
+
+h4 {
+    font-size: 1.728rem;
+}
+
+h5 {
+    font-size: 1.44rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 1lh;
+    margin-bottom: 0px;
+}
+
+:is(a, h1, h2, h3, h4, h5, h6).fancy {
+    background: var(--fancy);
+    background-clip: text !important;
+    color: rgba(0, 0, 0, 0);
+    max-width: max-content;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+hr {
+    height: 1px;
+    margin: 2lh 0;
+    font-size: inherit;
+    background-color: var(--black-off);
+}
+
+table, th, td {
+    border: 1px solid var(--neutral);
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    border-bottom: 1px solid var(--purple);
+}
+
+details {
+    border: 1px solid var(--purple);
+    padding: 5px;
+}
+
+dt > details {
+    border: 0px;
+    padding: 0px;
+    color: var(--fg-off);
+}
+
+details > summary {
+    cursor: pointer;
+}
+
+details > summary::marker {
+    color: var(--purple);
+}
+
+body > footer {
+    padding: 5px;
+    background-color: var(--neutral);
+    font-weight: bold;
+    text-align: center;
+}
+
+body > header div {
+    display: inline-block;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+body > header a:first-child {
+    font-weight: bold;
+}
+
+body > header a:not(:first-child) {
+    color: var(--fg) !important;
+}
+
+body > header {
+    padding: 10px;
+    background: linear-gradient(to right, var(--purple), var(--pink)) left bottom var(--bg) no-repeat;
+    background-size:100% 2px;
+}
+
+body > header a:not(:first-child) {
+    border-left: 2px solid var(--neutral);
+}
+
+body > header a:has(span:empty) {
+    color: color-mix(in oklch, var(--fg-off) 70%, transparent 30%) !important;
+    pointer-events: none;
+}
+
+header time {
+    display: inline-block;
+    margin-top: 0.5lh;
+    color: var(--fg-off);
+}
+
+/* TODO */
+.purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+div#meaning {
+    display: block;
+    margin: 30px 0px 0px 0px;
+    font-size: 1.728rem;
+    font-weight: bold;
+}
+
+#pos {
+    font-style: italic;
+}
+
+span.pos:has(~ span) {
+    margin-right: 1ch;
+}
+
+span.pos:has(span)::before {
+    content: "[ ";
+}
+
+span.pos:has(span) span:last-of-type::after {
+    content: " ]";
+}
+
+span#detail {
+    font-style: italic;
+}
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 1.0rem;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+button {
+    border-radius: 10px;
+    border: 0px;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/*
+ * Shared behavior
+ */
+[data-loading] :is(section.status *, body > header a:not(:first-child)) {
+    visibility: hidden;
+}
+
+label[for=theme_toggle] {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    border-top: 20px solid color-mix(in oklch, var(--fg-off) 50%, transparent 50%);
+    border-left: 20px solid transparent;
+}
+
+.card {
+    padding: 15px 25px;
+    border-radius: 10px;
+    background: var(--neutral);
+    box-shadow: var(--shadow);
+}
+
+/*
+ * Landing page
+ */
+nav:has(section.status) {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 40px;
+}
+
+nav :is(section.status:first-child button, section.status:last-child) {
+    background: var(--fancy);
+    color: var(--white);
+}
+
+nav section.status:last-child {
+    color: var(--bg) !important;
+}
+
+nav section.status:last-child button {
+    background: var(--bg);
+    color: var(--fg);
+}
+
+section.status:last-child {
+    box-shadow: var(--shadow2);
+}
+
+section.status {
+    flex: 1 1 0px;
+    background: var(--neutral);
+    margin: 0px 10px 10px 0px;
+}
+
+.status h4 {
+    margin-top: 0px;
+}
+
+.status p {
+    margin: 0.75lh 0;
+}
+
+section.status button::after {
+    content: "» Start";
+}
+
+section.status span.num {
+    font-weight: bold;
+}
+
+section.status:has(span.num:empty) button::after {
+    content: "soon…";
+}
+
+section.status:has(span.num:empty) > p:first-of-type {
+    display: none;
+}
+
+section.status:has(span.num:not(:empty)) > p:last-of-type {
+    display: none;
+}
+
+section.status:has(span.num:empty) a {
+    pointer-events: none;
+}
+
+section.status:has(:and(.num:empty, time:empty)) a {
+    visibility: hidden;
+}
+
+span:has(time:empty) {
+    display: none;
+}
+
+span:has(time:not(:empty)) ~ span {
+    display: none;
+}
+
+
+.grid2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.grid3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.grid4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+dl.card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 0.75lh;
+    line-height: 1.625;
+}
+
+/*
+ *
+ */
+
+h4:has(a) {
+    color: var(--fg);
+}
+
+dl {
+    margin: 16px 10px 31px 0px;
+    padding: 15px 25px;
+}
+
+dd {
+    margin-left: 0px;
+}
+
+dl :is(span,em) {
+    color: var(--fg-off);
+}
+
+dfn, span[lang=id] {
+    color: var(--purple);
+    font-weight: bold;
+    font-style: normal;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: row;
+}
+
+footer nav fieldset {
+    flex-grow: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 15px 0px;
+    font-weight: bold;
+}
+
+footer nav fieldset:has(a#next) {
+    text-align: right;
+}
+
+fieldset span {
+    display: block;
+}
+
+div#done h3 {
+    color: var(--purple);
+}
+
+
+:is(div#back, div#front) {
+    min-height: 300px;
+    margin-bottom: 40px;
+}
+
+/*
+ * Learn
+ */
+section.vocab {
+    min-height: 450px;
+    margin: auto;
+    display: block;
+}
+
+hr:has(~ #sentences:empty) {
+    display: none;
+}
+
+#sentences dt:not(:first-of-type) {
+    margin-top: 1lh;
+}
+
+main:has(section.vocab) {
+    width: min(400px, 100% - 2rem);
+}
+
+section.vocab fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 5px;
+}
+
+section.vocab:not([data-mode="done"]) div#done {
+    display: none;
+}
+
+section.vocab[data-mode=done] > :not(div#done) {
+    display: none;
+}
+
+section.vocab[data-mode=front] > div#back {
+    visibility: hidden;
+}
+
+section.vocab[data-mode=front] fieldset {
+    visibility: hidden;
+}
+
+section.vocab[data-mode=back] button#flip {
+    display: none;
+}
+
+section#no_vocab {
+    display: none;
+}
+
+section#no_vocab[data-active] {
+    width: 500px;
+    margin: auto;
+    display: block;
+}
+
+section#no_vocab[data-active] ~ section#new_vocab {
+    display: none;
+}
+
+section#new_vocab {
+    width: 500px;
+    margin: auto;
+}
+
+
+:is(section.vocab, section.card) dd {
+    margin-inline-start: 0px;
+}
+
+:is(section.vocab, section.card) h6:has(~ div:empty) {
+    display: none;
+}
+
+/*
+ * quiz
+ */
+.quiz {
+    margin: 16px 10px 31px 0px;
+    padding: 15px 25px;
+}
+
+.quiz div:not(:last-child) {
+    min-height: 1rem;
+    padding-bottom: 15px;
+}
+
+.quiz :is(input, span:not(.blank)) {
+    display: none;
+}
+
+.quiz input:checked + span {
+    display: inline;
+}
+
+.quiz input:checked span.blank {
+    display: none;
+}
+
+.quiz span {
+    color: var(--red);
+}
+
+.quiz span.correct {
+    color: var(--green);
+}
+
+.quiz:has(input:checked + span.correct) label:not(.correct) {
+    pointer-events: none;
+    text-decoration: line-through;
+    text-decoration-color: var(--fg);
+    background-color: rgba(95, 42, 162, 0.3);
+}
+
+.quiz:has(input:checked + span.correct) div:nth-child(3):not(:empty) {
+    display: block;
+}
+
+.quiz:has(input:checked) .blank {
+    display: none;
+}
+
+.quiz div:not(:last-child) {
+    font-weight: bold;
+}
+
+.quiz div:last-child label {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz div:nth-child(2) {
+    color: var(--purple);
+}
+
+.quiz div:nth-child(3) {
+    display: none;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--fg-off);
+}
+
+span.blank::before {
+    content: "         ";
+    text-decoration: underline;
+    white-space: pre;
+    color: var(--fg);
+}
+
+dl.examples dfn ~ span {
+    display: block;
+}
+
+dl.not(.examples) dnf ~ span {
+    font-style: italix;
+}
+
+dl:not(.examples) dfn ~ span::before {
+    content: " - ";
+}
+
+@media only screen and (max-width: 600px) {
+    .grid2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    dfn ~ span::before {
+        display: none;
+    }
+
+    dfn ~ span {
+        display: block;
+    }
+
+    .grid2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav:has(section.status) {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    button.answer {
+        font-size: 1rem;
+        padding: 5px 15px;
+    }
+}

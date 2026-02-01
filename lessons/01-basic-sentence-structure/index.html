@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Basic sentence structure &amp; context</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();await idn.stats();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main><article>
+  <header>
+    <h3 class="fancy">Basic sentence structure &amp; context</h3>
+    <time datetime="2025-10-24">Last updated on 2025-10-24</time>
+  </header>
+  <section><blockquote>
+<p>From this point on <em>Indonesian</em> specifically refers to <em>Bahasa Indonesia</em>. While a lot of the presented information is shared with <em>Bahasa Malayu</em>, both being offspring of <em>Classical Malay</em>, I'm neither educated enough, nor have the cultural understanding to point out the differences and nuances. Please feel free to contact me when you find mixups and errors.</p>
+</blockquote>
+<p>Similar to <em>English</em> and most other Indo-European languages <em>Indonesian</em> generally uses</p>
+<blockquote>
+<p><strong>Subject - Verb - Object (SVO)</strong></p>
+</blockquote>
+<p>While this is the most commonly used form, <em>Indonesian</em> offers a lot of flexibility depending on context and desired emphasis. Made especially easy due to the general lack of conjugations, tenses, and gender nouns which will be discussed in detail later. Words are often omitted in casual conversation when the context is enough to infer the intended meaning. The specifics will become clear with enough practice.</p>
+<h5>Vocabulary</h5>
+<dl class="card grid4">
+<div>
+  <dt>
+    <dfn lang="id">saya</dfn><span>pronoun</span></dt>
+  <dd lang="en">
+    <b>I</b>
+    <em>(formal)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">suka</dfn><span>verb root</span></dt>
+  <dd lang="en">
+    <b>to like</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">makan</dfn><span>verb root</span></dt>
+  <dd lang="en">
+    <b>to eat</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">menulis</dfn><span>verb</span></dt>
+  <dd lang="en">
+    <b>to write</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">kucing</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>cat</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">apel</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>apple</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">surat</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>letter</b>
+  </dd>
+</div>
+
+</dl>
+<h5>Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Saya suka kucing</dfn><details>
+        <summary>personal pronoun + verb + noun</summary><span class="pos">Saya<sub>perp</sub><sup>S</sup></span><span class="pos">suka<sub>v</sub></span><span class="pos">kucing<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>I like cats</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Saya makan apel</dfn><details>
+        <summary>personal pronoun + verb + noun</summary><span class="pos">Saya<sub>perp</sub><sup>S</sup></span><span class="pos">makan<sub>v</sub></span><span class="pos">apel<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>I&#x27;m eating an apple</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Saya menulis surat</dfn><details>
+        <summary>personal pronoun + verb + noun</summary><span class="pos">Saya<sub>perp</sub><sup>S</sup></span><span class="pos">menulis<sub>v</sub></span><span class="pos">surat<sub>n</sub><sup>O</sup></span></details></dt>
+  <dd lang="en">
+    <b>I&#x27;m writing a letter</b>
+  </dd>
+</div>
+
+</dl>
+<p>The first two simple sentences showcase how context heavy <em>Indonesian</em> is, especially in casual daily conversations that use a lot of abbreviations. The first sentence, <span lang="id" title="">Saya suka kucing</span>
+, despite meaning <strong>I like cats</strong>, literally translates to "<strong>I like cat</strong>", with <strong>cat</strong> as a singular. The proper way to form the plural of a noun is by repetition, hence <span lang="id" title="cats">kucing-kucing</span>
+ is <strong>cats</strong>.</p>
+<p>So why is <span lang="id" title="cat">kucing</span>
+ used instead? Because there is nothing that would indicate a specific singular cat, like for example <em>this</em> or <em>that</em> cat. This leads to the assumption that the speaker is talking about cats in general despite using <span lang="id" title="cat">kucing</span>
+ instead of <span lang="id" title="cats">kucing-kucing</span>
+.</p>
+<p>The second sentence <span lang="id" title="I&#x27;m eating an apple">Saya makan apel</span>
+ is similar but with regard to the verb tense instead. On its own and without further context it would most likely be translated to "<strong>I'm eating an apple</strong>". But if it was the answer to someone asking "<strong>What kind of fruits do you eat?</strong>", suddenly its translation would change to "<strong>I eat apples</strong>" instead. Notice how in this case both the tense of <strong>eat</strong> and the number of <strong>apple</strong> changes.</p>
+<p>There are words that can be used to be more specific if needed, <span lang="id" title="I&#x27;m eating an apple">Saya sedang makan apel</span>
+, for example, explicitly states that you are <strong>eating</strong> right now.</p>
+<p><em>Indonesian</em> has its own formal grammar and rules just like any other language, but is a lot more flexible in its usage. The more you drift into casualness and slang the further you deviate from the textbooks. Especially in text you might find things like <span lang="id" title=" cats">kucing2</span>
+ instead of <span lang="id" title="cats">kucing-kucing</span>
+ to say <strong>cats</strong>. This might sound a little daunting at first, but it also makes constructing sentences very easy and requires less words and concepts to be memorized to express yourself.</p>
+</section>
+  <footer>
+    <nav>
+        <fieldset>
+          <span>Next chapter:</span>
+          <a id="next" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;02-pronouns&#x2F;">Pronouns &amp; Demonstratives »</a>
+        </fieldset></nav>
+  </footer>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>

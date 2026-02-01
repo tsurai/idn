@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>idn - Greetings &amp; Farewells</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <link rel="icon" href="data:,">
+    <link rel="preload stylesheet" as="style" href="/idn/style.css">
+    <script async type="module">
+      import init, { Idn } from "/idn/pkg/idn.js";
+
+      async function run() {
+        const is_inverted = localStorage.getItem("invert") == "true";
+        const ele = document.querySelector("#theme_toggle");
+        ele.checked = is_inverted;
+        ele.addEventListener("change", () => localStorage.setItem("invert", ele.checked));
+
+        await init();
+        try {
+          let idn = await Idn.new();await idn.stats();}
+        catch(e) {
+          console.error(e);
+        }
+      }
+      run();
+    </script>
+  </head>
+  <body data-loading="">
+    <input id="theme_toggle" type="checkbox"></input>
+    <label for="theme_toggle"></label>
+      <header>
+        <nav>
+          <a href="/idn/"><div>IDN</div></a>
+          <a href="/idn/learn/"><div><span id="num_vocabs" class="num"></span> Learn</div></a>
+          <a href="/idn/review/"><div><span id="num_reviews" class="num"></span> Review</div></a>
+        </nav>
+      </header>
+    <main><article>
+  <header>
+    <h3 class="fancy">Greetings &amp; Farewells</h3>
+    <time datetime="2025-09-13">Last updated on 2025-09-13</time>
+  </header>
+  <section><p>Time to learn how to greet and say goodbye. Similar to many other languages, <em>Indonesian</em> combines a form of well-wishes with the time of the day to form greetings. One of the meanings of the word <span lang="id" title="safe &#x2F; well &#x2F; congratulation">selamat</span>
+ is <strong>safe</strong> / <strong>well</strong>, and combined with <span lang="id" title="morning">pagi</span>
+ / <strong>morning</strong> creates the phrase <span lang="id" title="good morning">selamat page</span>
+ / <strong>good morning</strong>.</p>
+<h4 id="polite-neutral">Polite &amp; Neutral</h4>
+<h5 id="vocabulary">Vocabulary</h5>
+<dl class="card grid4">
+<div>
+  <dt>
+    <dfn lang="id">halo</dfn><span>interjection</span></dt>
+  <dd lang="en">
+    <b>hello</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">selamat</dfn><span>adj &#x2F; noun</span></dt>
+  <dd lang="en">
+    <b>safe &#x2F; well &#x2F; congratulation</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">pagi</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>morning</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">siang</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>noon</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">sore</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>afternoon</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">malam</dfn><span>noun</span></dt>
+  <dd lang="en">
+    <b>night</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">tinggal</dfn><span>verb root</span></dt>
+  <dd lang="en">
+    <b>to stay</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">jalan</dfn><span>verb root</span></dt>
+  <dd lang="en">
+    <b>to walk &#x2F; go</b>
+  </dd>
+</div>
+
+</dl>
+<p>One phrase that might trip up <em>English</em> speaker is <span lang="id" title="good night">selamat malam</span>
+ / <strong>good night</strong>. In <em>Indonesian</em> it is used both as greeting and farewell used at night. The same applies to all the other times of the day as well. Some specific situations have their own phrases.</p>
+<p>When two people or parties separate, with one of them leaving and the other staying, for example. In this case the <em>staying</em> person would say <span lang="id" title="goodbye &#x2F; safe trip">selamat jalan</span>
+ which means <strong>goodbye</strong> / <strong>safe trip</strong>. Likewise the person who <em>leaves</em> would say <span lang="id" title="goodbye">selamat tinggal</span>
+ which literally means to <strong>stay safe</strong>, but is more akin to a generic <strong>goodbye</strong>.</p>
+<h5 id="examples">Examples</h5>
+<dl class="card examples">
+<div>
+  <dt>
+    <dfn lang="id">Selamat sore</dfn><span>adjective + noun (phrase)</span></dt>
+  <dd lang="en">
+    <b>Good afternoon</b>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Selamat malam</dfn><span>adjective + noun (phrase)</span></dt>
+  <dd lang="en">
+    <b>Good night</b>
+    <em>(both a greeting and farewell)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">halo, apa kabar?</dfn><span>interjecton + predicate + noun</span></dt>
+  <dd lang="en">
+    <b>Hello, how are you?</b>
+  </dd>
+</div>
+
+</dl>
+<h4 id="casual">Casual</h4>
+<p>Casual speech and especially slang is ever shifting and evolving, not to mention the hundreds of local languages spread across <em>Indonesia</em>. Again, be careful with overly casual speech and slang as a language learner. That being said, it can be difficult to follow <em>Indonesian</em> used by younger people without it, especially online.</p>
+<h5 id="vocabulary-1">Vocabulary</h5>
+<dl class="card grid1">
+<div>
+  <dt>
+    <dfn lang="id">hai</dfn><span>interjection</span></dt>
+  <dd lang="en">
+    <b>hi &#x2F; hey</b>
+    <em>(casual but neutral)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">woy</dfn><span>interjection</span></dt>
+  <dd lang="en">
+    <b>hey! &#x2F; yo!</b>
+    <em>(very casual slang)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Udah makan belum</dfn><span>phrase</span></dt>
+  <dd lang="en">
+    <b>Have you eaten yet?</b>
+    <em>(common greeting, similar to How are you?, not literal about food)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Met pagi</dfn><span>phrase</span></dt>
+  <dd lang="en">
+    <b>Good morning</b>
+    <em>(met is a common abbreviation of selamat)</em>
+  </dd>
+</div>
+
+<div>
+  <dt>
+    <dfn lang="id">Piye kabarmu?</dfn><span>phrase</span></dt>
+  <dd lang="en">
+    <b>How are you?</b>
+    <em>(local javanese expression)</em>
+  </dd>
+</div>
+
+</dl>
+<h5 id="quiz">Quiz</h5>
+<p><div class="quiz card">
+  <div>
+    Goodbye (when leaving)
+  </div>
+  <div>
+      Selamat<input id="sore-316730231" name="quiz-316730231" type="radio" autocomplete="off"/>
+        <span >sore</span><input id="tinggal-316730231" name="quiz-316730231" type="radio" autocomplete="off"/>
+        <span class="correct">tinggal</span><input id="pagi-316730231" name="quiz-316730231" type="radio" autocomplete="off"/>
+        <span >pagi</span><input id="jalan-316730231" name="quiz-316730231" type="radio" autocomplete="off"/>
+        <span >jalan</span><span class="blank"></span></div>
+  <div></div>
+  <div><label class="button purple " for="sore-316730231">sore</label><label class="button purple correct" for="tinggal-316730231">tinggal</label><label class="button purple " for="pagi-316730231">pagi</label><label class="button purple " for="jalan-316730231">jalan</label></div>
+</div>
+
+<div class="quiz card">
+  <div>
+    Good morning
+  </div>
+  <div>
+      Selamat<input id="malam-587786485" name="quiz-587786485" type="radio" autocomplete="off"/>
+        <span >malam</span><input id="sore-587786485" name="quiz-587786485" type="radio" autocomplete="off"/>
+        <span >sore</span><input id="pagi-587786485" name="quiz-587786485" type="radio" autocomplete="off"/>
+        <span class="correct">pagi</span><input id="siang-587786485" name="quiz-587786485" type="radio" autocomplete="off"/>
+        <span >siang</span><span class="blank"></span></div>
+  <div></div>
+  <div><label class="button purple " for="malam-587786485">malam</label><label class="button purple " for="sore-587786485">sore</label><label class="button purple correct" for="pagi-587786485">pagi</label><label class="button purple " for="siang-587786485">siang</label></div>
+</div>
+
+<div class="quiz card">
+  <div>
+    Goodbye &#x2F; Safe trip (when staying)
+  </div>
+  <div>
+      Selamat<input id="jalan-829084171" name="quiz-829084171" type="radio" autocomplete="off"/>
+        <span class="correct">jalan</span><input id="malam-829084171" name="quiz-829084171" type="radio" autocomplete="off"/>
+        <span >malam</span><input id="halo-829084171" name="quiz-829084171" type="radio" autocomplete="off"/>
+        <span >halo</span><input id="tinggal-829084171" name="quiz-829084171" type="radio" autocomplete="off"/>
+        <span >tinggal</span><span class="blank"></span></div>
+  <div></div>
+  <div><label class="button purple correct" for="jalan-829084171">jalan</label><label class="button purple " for="malam-829084171">malam</label><label class="button purple " for="halo-829084171">halo</label><label class="button purple " for="tinggal-829084171">tinggal</label></div>
+</div>
+</p>
+</section>
+  <footer>
+    <nav><fieldset>
+          <span>Previous chapter:</span>
+          <a id="prev" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;02-pronouns&#x2F;">« Pronouns &amp; Demonstratives</a>
+        </fieldset>
+        <fieldset>
+          <span>Next chapter:</span>
+          <a id="next" class="fancy" href="https:&#x2F;&#x2F;tsurai.github.io&#x2F;idn&#x2F;lessons&#x2F;04-verb-modification&#x2F;">Conjugation: Tense &amp; Voice »</a>
+        </fieldset></nav>
+  </footer>
+</article>
+</main>
+    <footer>
+      <a href="/idn/privacy/">Privacy Notice</a>
+    </footer>
+  </body>
+</html>
